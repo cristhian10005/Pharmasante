@@ -1,0 +1,111 @@
+*{
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    padding: 70px 0 0 70px;
+    color: rgb(189, 7, 40);
+}
+.table-container{
+    margin:25px 5%;
+    overflow-x: auto;
+}
+
+.table-container>div{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-left: 20px;
+}
+.table-container>div input{
+    border: 1px solid #205192;
+    height: 26px;
+    border-radius: 5px;
+}
+
+.table-container>div button{
+    background: rgb(189, 7, 40);
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.table-container>div button:hover{
+    cursor: pointer;
+}
+
+.enlace-pto-agr{
+    color: #205192;
+}
+.tabla{
+    margin: 10px auto;
+    max-width: 1100px;
+}
+.tabla th{
+    background:  #205192;
+    color: #fff;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tabla th, .tabla td{
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 8px;
+    
+}
+.tabla tbody tr:hover{
+    cursor: pointer;
+    background: #b5cae6;
+}
+
+.seleccionada{
+    background: #b5cae6;
+}
+
+.tabla tbody td{
+    padding-bottom: 10px;    
+}
+
+.td5 a{
+    padding: 0 25%;
+}
+.tabla td a{
+    color: #205192;
+    text-align: center;
+}
+.tabla tfoot td{
+    color: #205192;
+    font-weight: 600;
+    padding:15px;
+}
+.tabla tfoot select{
+    border: 1px solid #205192;
+    color: #205192;
+    outline: none;
+    border-radius: 5px;
+}
+.tabla tfoot button{
+    background:  rgb(189, 7, 40);
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+.tabla tfoot button:hover{
+    cursor: pointer;
+}
+
+
+@media (max-width: 750px){
+    .table-container{
+        margin:25px 8%; 
+    }
+}

@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pharmasante</title>
+		<link rel="stylesheet" href="../css/styleIndex.css">
+		<link rel="stylesheet" href="../fontawesome/css/all.css">
+		<link rel="stylesheet" href="css/styleAccount.css">
+		<link rel="stylesheet" href="css/stylePanel.css	">
+		<link rel="icon" type="image/png" href="../img/logo.png">
+	</head>
+ 	
+	<body>
+			
+		<header class="header-panel">
+			<div class="panel-img">
+				<img src="../img/logo.png" alt="">
+				<h4>Bienvenido Cristhian</h4>
+			</div>
+			<a href="../index.html"><i class="fa-solid fa-power-off"></i></a>
+		</header>
+
+		<nav class="menu-panel menu-plegado">
+			<ul class="menu-panel-enlaces">
+				<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+					</i> <span class="ocultar">Ocultar</span></a></li>
+				<li><a href="cliente.html"><i class="fa-solid fa-house"></i> 
+					<span class="ocultar">Inicio</span></a></li>
+				<li><a href="catalogo.html?categoria=1"><i class="fa-solid fa-pills"></i> <span class="ocultar">Catálogo</span></a></li>
+				<li><a href="shopping.html"><i class="fa-solid fa-cart-shopping"></i> 
+					<span class="ocultar">Carrito</span></a></li>
+				<li><a href="order.html"><i class="fa-solid fa-list-ol"></i>
+					<span class="ocultar">Pedidos</span></a></li>
+				<li class="foco"><a href="#"><i class="fa-regular fa-circle-user"></i> <span class="ocultar">Cuenta</span></a></li>
+			</ul>
+		</nav>
+		
+
+<!-- Información de cuenta -->
+
+		<section class="section-date">	
+			<div class="section-account">
+
+				<!-- Iformación personal -->
+
+				<div class="section-account-1">
+					<h2>Información personal</h2>
+					<div class="section-date-1">
+						<p>Nombre: <span>Cristhian Mora</span></p>
+						<p>Número de identificación: <span>96622478</span></p>
+						<p>Número de contacto: <span>3005499229</span></p>
+						<p>Correo: <span>cristhian1005@gmail.com</span></p>
+						<p>Fecha de nacimiento: <span>26-08-1999</span></p>
+						<p>Dirección:<span>cra2 # 162-34</span></p>
+						<p>Fecha de nacimiento: <span>26-08-1999</span></p>
+						<p>Reportes negativos: <span>3</span></p>
+						<a href="#form-section-date" class="btn-pass">Actualizar contraseña</a>
+					</div>
+					<form action="#" id="form-section-date">
+						<input type="password" placeholder="Ingrese su anterior contraseña">
+						<input type="password" placeholder="Ingrese su nueva contraseña">
+						<input type="password" placeholder="confirmar contraseña">
+						<input type="submit" value="actualizar">
+					</form>
+				</div>
+		</section>
+
+
+		<script src="js/panel.js"></script>
+		<script type= text/javascript src="../js/menu.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../js/alertas.js"></script>
+	</body>
+</html>

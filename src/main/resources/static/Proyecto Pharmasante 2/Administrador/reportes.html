@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pharmasante</title>
+	<link rel="stylesheet" href="../fontawesome/css/all.css">
+	<link rel="icon" type="image/png" href="../img/logo.png">
+	<link rel="stylesheet" href="../catalogo/css/stylePanel.css">
+	<link rel="stylesheet" href="../vendedor/css/styleVendor.css">
+	<link rel="stylesheet" href="css/styleFormP.css">
+</head>
+
+<body>
+
+	<!-- Menu de navegación principal -->
+
+	<header class="header-panel">
+		<div class="panel-img">
+			<img src="../img/logo.png" alt="">
+			<h4>Bienvenido Cristhian</h4>
+		</div>
+		<div>
+			<li><a href="#"><i class="fa-solid fa-power-off"></i></a></li>
+		</div>
+	</header>
+
+	<!-- Menu de navegación principal -->
+
+	<nav class="menu-panel menu-plegado">
+		<ul class="menu-panel-enlaces">
+			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+				</i> <span class="ocultar">Ocultar</span></a></li>
+			<li><a href="productos.html"><i class="fa-solid fa-pills"></i> 
+				<span class="ocultar">Productos</span></a></li>
+			<li><a href="ventas.html"><i class="fa-solid fa-file-invoice-dollar"></i>
+				<span class="ocultar">Ventas</span></a></li>			
+			<li class="foco"><a href="reportes.html"><i class="fa-solid fa-file-lines"></i>
+				<span class="ocultar">Reportes</span></a></li>
+			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+				<span class="ocultar">Cuentas</span></a></li>
+		</ul>
+	</nav>
+
+
+
+	<!-- Catalogo de productos principal -->
+
+	<h2>Reportes de ventas</h2>
+	<form class="reportes-form">
+		<h4>Seleccione las fechas en las cuales desea generar el reporte</h4>
+		<p>El periodo no puede superar los 30 días</p>
+		<div class="input-date">
+			<div>
+				<label>Fecha inicial</label>
+				<input type="date">
+			</div>
+			<div>
+				<label>Fecha inicial</label>
+				<input type="date">
+			</div>
+			<button>Generar</button>	
+		</div>
+	</form>
+	
+	<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../js/alertas.js"></script> -->
+	<script src="../catalogo/js/panel.js"></script>
+
+	<!-- Scripts enlaces -->
+</body>
+
+</html>

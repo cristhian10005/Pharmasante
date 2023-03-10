@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pharmasante</title>
+		<link rel="stylesheet" href="css/slide.css">
+		<link rel="stylesheet" href="css/styleIndex.css">
+		<link rel="stylesheet" href="fontawesome/css/all.css">
+		<link rel="icon" type="image/png" href="img/logo.png">
+	</head>
+	<body>
+		
+		<!-- Menu de navegación principal -->
+	
+		<header class="header">
+			<div class="header-logo">
+				<img src="img/logo.png" alt="Logo">
+			</div>
+			<div class="buscar">
+				<input type="text" placeholder="¿Que estás buscando?" id="tex-busqueda">
+				<button id="btn-buscar">Buscar</button>
+			</div>
+			<ul class="header-list">
+				<li> <a href="index.html">Inicio</a> </li>
+				<li> <a href="Registro.html">Registrarse</a> </li>
+				<li> <a href="login.html">Iniciar sesión</a> </li>
+			</ul>
+			<span class="btn-bars"> <i class="fa fa-bars"></i> </span>
+		</header>
+	
+		<nav>
+			<a href="#" class="btn-catalogo">Catálogo <i class="fa-solid fa-chevron-down"></i></a>
+			<ul id="nav-catalogo" class="plegar">
+				<li><a href="categoria.html?categoria=1" class="enlace-sin">Medicamentos</a></li>
+				<li><a href="categoria.html?categoria=2" class="enlace-sin">Cosméticos</a></li>
+				<li><a href="categoria.html?categoria=3" class="enlace-sin">Cuidado personal</a></li>
+				<li><a href="categoria.html?categoria=4" class="enlace-sin foco-nav-a">Alimentos y bebidas</a></li>
+			</ul>
+		</nav>
+	
+	
+<!-- Lista de medicamentos -->
+
+<div class="categoria-filtro">
+	
+
+</div>
+
+
+<script type=text/javascript src="js/menu.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/busqueda.js"></script>
+	<script src="js/filtrarCategoria.js"></script>
+	<script src="js/agregar.js"></script>
+<!-- Sección 2-->
+</body>
+</html>

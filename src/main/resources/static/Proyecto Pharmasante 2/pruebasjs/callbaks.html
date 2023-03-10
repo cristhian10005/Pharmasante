@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Callbacks.....
+
+      /*  class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+        }
+        const data = [
+            ["Juan", "22"],
+            ["Jesus", "30"],
+            ["Carlos", "12"],
+            ["Pedro", "16"]
+        ];
+        const personas = [];
+        for (let i = 0; i < data.length; i++) {
+            personas[i] = new Persona(data[i][0], data[i][1])
+        }
+        
+        const obtenerPersona = (id,cb)=>{
+            if(personas[id] == undefined){
+                cb("No se encontro la persona");
+            }else{
+                cb(null,personas[id])
+            }
+        }
+
+        obtenerPersona(1,(err, person)=>{
+             if(err != null){
+                console.log(err);
+             }else{
+                console.log(person.nombre);
+                console.log(person.edad);
+             }   
+        })
+
+
+         //Promesas.....
+
+         let nombre = "pedro";
+         //Se crea una instancia de promesa, esta recibe dos funciones como parametro
+         //una es lo que se ejecuta si todo sale bien, la otra si algo sale mal
+         //más o menos producir una excepción
+         const promesa = new Promise((resolve, reject)=>{
+            if(nombre!="pedro")resolve("nombre incorrecto");
+            else reject(nombre);
+         });
+
+        //como la promesa recibe dos funciones como parametro, la primera se ejecuta en then
+        //en then ejecutamos la funcionolidad que queremos con el parametro que nos envia
+        //la promesa. En catch se ejecuta la segunda función, en caso de algo no se cumpla
+        // o alla salido mal, es parecido a una excepción.
+        promesa.then((res)=>{
+            console.log(res);
+        }).catch((e)=>{
+            console.log(e);
+        });
+*/
+
+        //Ejemplo de ejecución de promesas
+
+        let servidor = setTimeout(()=>{
+            return "Datos servidor";
+        }, 2000)
+
+
+        let promesa2 = new Promise((res, rej)=>{
+              if(servidor =="Datos servidor")res(servidor);
+              else rej("No hay nada");   
+        })
+        promesa2.then((e)=>{
+            console.log(e);
+        }).catch((e)=>{
+            console.log(e);
+        })
+
+
+    </script>
+</body>
+
+</html>

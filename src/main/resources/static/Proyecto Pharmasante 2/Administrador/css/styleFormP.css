@@ -1,0 +1,147 @@
+.table-p{
+    position: relative;
+}
+#form-product{
+    background: rgba(0, 0, 0, .4 );
+    position: absolute;
+    padding: 10px;
+    z-index: 20;
+    left: 5%;
+    right: 5%;
+    top: 15%;
+    bottom: 5%;
+    display: none;
+}
+
+#form-product:target{
+    display: flex;
+}
+
+#form-product a {
+    color: #B41F1F;
+    font-weight: bold;
+}
+#form-product form{
+    width: 50%;
+    border-radius: 30px;
+	background: #ffffff;
+	box-shadow:  7px 7px 14px #6e6e6e,
+             -7px -7px 14px #6e6e6e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+#form-product form label{
+    color: #B41F1F;
+    font-weight: bold;
+}
+#form-product form input, #form-product form select{
+    width: 80%;
+    color: #205192;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #8dadd7;
+    height: 30px;
+}
+#form-product input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-color: rgb(255, 255, 255);
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #8ebde6;
+    border-color: #204d74;
+  }
+
+
+#form-product form input::placeholder{
+    color: #205192;
+}
+#form-product form button{
+    background: #B41F1F;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+}
+
+
+/*Reportes*/
+
+.reportes-form{
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 50px 0;
+    border-radius: 30px;
+	background: #ffffff;
+	box-shadow:  7px 7px 14px #c4c4c4,
+             -7px -7px 14px #ffffff;
+}
+
+.reportes-form h4{
+    color: #205192;
+}
+.reportes-form p{
+    color: #B41F1F;
+}
+
+.input-date{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px 30px;
+}
+.input-date input{
+    color: #205192;
+    height: 25px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid #9db8e5;
+    outline: none;
+}
+
+.input-date input:hover, button:hover{
+    cursor: pointer;
+}
+.input-date button{
+    background: #B41F1F;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+
+/*Tablas y graficos*/
+
+
+.lista-tipos-reportes{
+    margin: 35px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#foco-a{
+    color: #205192;
+    font-weight: 600;
+}
+
+.lista-tipos-reportes a{
+    color: #72859e;
+}
+
+#cont-graficos{
+    width: 80%;
+    margin: auto;
+    
+}

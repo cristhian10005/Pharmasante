@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pharmasante</title>
+	<link rel="stylesheet" href="../fontawesome/css/all.css">
+	<link rel="icon" type="image/png" href="../img/logo.png">
+	<link rel="stylesheet" href="../catalogo/css/stylePanel.css">
+	<link rel="stylesheet" href="css/styleVendor.css">
+</head>
+
+<body>
+
+	<!-- Menu de navegación principal -->
+
+	<header class="header-panel">
+		<div class="panel-img">
+			<img src="../img/logo.png" alt="">
+			<h4>Bienvenido Cristhian</h4>
+		</div>
+		<div>
+			<li><a href="#"><i class="fa-solid fa-power-off"></i></a></li>
+		</div>
+	</header>
+
+	<!-- Menu de navegación principal -->
+
+	<nav class="menu-panel menu-plegado">
+		<ul class="menu-panel-enlaces">
+			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+				</i> <span class="ocultar">Ocultar</span></a></li>
+			<li><a href="pagosDirectos.html"><i class="fa-solid fa-pills"></i> 
+				<span class="ocultar">Productos</span></a></li>
+			<li class="foco"><a href="#"><i class="fa-solid fa-cash-register"></i> 
+				<span class="ocultar">Caja</span></a></li>
+			<li><a href="pedidos.html"><i class="fa-solid  fa-list-ol"></i> 
+				<span class="ocultar">Pedidos</span></a></li>
+			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+				<span class="ocultar">Cuenta</span></a></li>
+		</ul>
+	</nav>
+
+
+
+	<!-- Catalogo de productos principal -->
+
+	<h2>Caja</h2>
+
+	<section class="table-container">
+		<table class="tabla">
+			<thead>
+				<tr>
+					<th>Código producto</th>
+					<th>Descripsión</th>
+					<th>cantidad</th>
+					<th>Precio</th>
+					<th>Subtotal</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>536987</td>
+					<td>Mucosina Gotas 30ML</td>
+					<td>
+						<a href="#"><i class="fa-solid fa-angle-left"></i></a> 1
+						<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+					</td>
+					<td>$ 17500</td>
+					<td class="td5">$ 17500</td>
+				</tr>
+				<tr>
+					<td>366987</td>
+					<td>Noxpirin junior</td>
+					<td>
+						<a href="#"><i class="fa-solid fa-angle-left"></i></a> 1
+						<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+					</td>
+					<td>$ 4500</td>
+					<td class="td5"> $ 4500</td>
+				</tr>
+				<tr>
+					<td>316987</td>
+					<td>Manteca de cacao</td>
+					<td>
+						<a href="#"><i class="fa-solid fa-angle-left"></i></a> 1
+						<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+					</td>
+					<td>$ 1200</td>
+					<td class="td5">$ 1200</td>
+				</tr>
+				<tr>
+					<td>536987</td>
+					<td>Amoxicilina 500mg Tab</td>
+					<td>
+						<a href="#"><i class="fa-solid fa-angle-left"></i></a> 1
+						<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+					</td>
+					<td>$ 2500</td>
+					<td class="td5">$ 2500</td>
+				</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Total:</td>
+						<td>$25700</td>
+						<td>método de pago </td>
+						<td>
+							<select name="" id="">
+								<option value="">Efectivo</option>
+								<option value="">Nequi</option>
+								<option value="">Daviplata</option>
+							</select>
+						</td>
+						<td>
+							<button>Registrar pago</button>
+						</td>
+					</tr>
+				  </tfoot>
+			</table>
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../js/alertas.js"></script>
+	<script src="../catalogo/js/panel.js"></script>
+
+	<!-- Scripts enlaces -->
+</body>
+
+</html>

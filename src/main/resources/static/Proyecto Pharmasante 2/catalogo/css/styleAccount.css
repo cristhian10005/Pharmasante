@@ -1,0 +1,89 @@
+.section-date{
+	width: 95%;
+	margin-left: 5%;
+	padding-top: 5%;
+}
+
+.section-account{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 0 1px #666;
+	margin: 20px 5%;
+	padding: 20px 0;
+}
+
+.section-date h1{
+	margin: 20px 0;
+	text-align: center;
+}
+
+.section-date-1{
+	display: flex;
+	flex-direction: column;
+}
+
+.section-date-1 p{
+	margin: 20px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.section-date-1 a{
+	background:#B41F1F; 
+	text-align: center;
+	color: #fff	;
+	padding: 5px 10px;
+	margin: auto;
+	max-width: 200px;
+}
+
+.section-account-1{
+	padding-right: 50px;
+}
+
+
+/*Formulario actualizar contraseña*/
+
+#form-section-date{
+	margin: 2px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 1px 1px 1px #aaa;
+	height: 0;
+	overflow: hidden;
+	transition: .3s;
+}
+
+#form-section-date:target{
+	height: 200px;
+}
+
+#form-section-date input{
+	margin: 10px 0;
+	height: 30px;
+	width: 80%;
+}
+#form-section-date input:focus{
+	outline: none;
+}
+#form-section-date input[type=submit]{
+	background: #B41F1F;
+	color: #fff;
+	border: none;
+	padding: 0 10px; 
+}
+
+
+
+/*Querys de cuenta*/
+
+@media (max-width: 500px){
+	.section-account{
+		flex-direction: column;
+	}
+	#details{
+		top: 120%;
+	}
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pharmasante</title>
+	<link rel="stylesheet" href="../fontawesome/css/all.css">
+	<link rel="icon" type="image/png" href="../img/logo.png">
+	<link rel="stylesheet" href="../catalogo/css/stylePanel.css">
+	<link rel="stylesheet" href="css/styleVendor.css">
+</head>
+
+<body>
+
+	<!-- Menu de navegación principal -->
+
+	<header class="header-panel">
+		<div class="panel-img">
+			<img src="../img/logo.png" alt="">
+			<h4>Bienvenido Cristhian</h4>
+		</div>
+		<div>
+			<li><a href="#"><i class="fa-solid fa-power-off"></i></a></li>
+		</div>
+	</header>
+
+	<!-- Menu de navegación principal -->
+
+	<nav class="menu-panel menu-plegado">
+		<ul class="menu-panel-enlaces">
+			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+				</i> <span class="ocultar">Ocultar</span></a></li>
+			<li><a href="pagosDirectos.html"><i class="fa-solid fa-pills"></i> 
+				<span class="ocultar">Productos</span></a></li>
+			<li><a href="caja.html"><i class="fa-solid fa-cash-register"></i> 
+				<span class="ocultar">Caja</span></a></li>
+			<li class="foco"><a href="#"><i class="fa-solid  fa-list-ol"></i> 
+				<span class="ocultar">Pedidos</span></a></li>
+			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+				<span class="ocultar">Cuenta</span></a></li>
+		</ul>
+	</nav>
+
+
+
+	<!-- Catalogo de productos principal -->
+
+	<h2>Pedidos solicitados</h2>
+
+	<section class="table-container">
+		<div>
+			<div>
+				<input type="text"> <button>Buscar</button>
+			</div>
+		</div>
+		<table class="tabla">
+			<thead>
+				<tr>
+					<th>Código de pedido</th>
+					<th>Tipo de pedido</th>
+					<th>Estado de pedido</th>
+					<th>Precio</th>
+					<th>Solicitante</th>
+					<th>Detalle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>005</td>
+					<td>Recoger en tienda</td>
+					<td>Solicitado</td>
+					<td>$ 32500</td>
+					<td>Pedro fernandez</td>
+					<td><a href="detallePedido.html">Ver más</a></td>
+				</tr>
+				<tr>
+					<td>001</td>
+					<td>Domicilio</td>
+					<td>Enviado</td>
+					<td>$ 16000</td>
+					<td>Carlos Mora</td>
+					<td><a href="detallePedido.html">Ver más</a></td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>Recoger en tienda</td>
+					<td>Solicitado</td>
+					<td>$ 32500</td>
+					<td>Pedro fernandez</td>
+					<td><a href="detallePedido.html">Ver más</a></td>
+				</tr>
+				<tr>
+					<td>003</td>
+					<td>Recoger en tienda</td>
+					<td>Alistado</td>
+					<td>$ 25700</td>
+					<td>María Cordoba</td>
+					<td><a href="detallePedido.html">Ver más</a></td>
+				</tr>
+				</tbody>
+			</table>
+	</section>
+
+
+	<script src="../catalogo/js/panel.js"></script>
+
+	<!-- Scripts enlaces -->
+</body>
+
+</html>

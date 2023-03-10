@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="galery">
+
+    </div>
+
+
+    <script>
+        window.onload =productLoad;
+            async function productLoad() {
+                let galery = document.querySelector(".galery");
+                const request = await fetch("../inventario/lista", {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(request);
+                const productsJson = await request.json();
+                console.log(productsJson);    
+                let lista = '';
+                for (let produc of productsJson) {
+                    lista += '<div> <p>' + produc.nombre + '</p><p>' + produc.precioVenta + ' </p>'
+                        + '<img src="' + produc.imagen + '" alt="" id="imagen"> </div>'
+                }
+                galery.innerHTML = lista;
+            }
+    </script>
+</body>
+
+</html>

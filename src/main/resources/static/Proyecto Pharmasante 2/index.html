@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pharmasante</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+	<link rel="stylesheet" href="css/slide.css">
+	<link rel="stylesheet" href="css/styleIndex.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+
+	<!-- Cabecera Menu de navegación principal -->
+
+	<header class="header">
+		<div class="header-logo">
+			<img src="img/logo.png" alt="Logo">
+		</div>
+		<div class="buscar">
+			<input type="text" placeholder="¿Que estás buscando?" id="tex-busqueda">
+			<button id="btn-buscar">Buscar</button>
+		</div>
+		<ul class="header-list">
+			<li> <a href="#">Inicio</a> </li>
+			<li> <a href="#slide-item2"> Nosotros</a> </li>
+			<li> <a href="Registro.html">Registrarse</a> </li>
+			<li> <a href="login.html">Iniciar sesión</a> </li>
+		</ul>
+		<span class="btn-bars"> <i class="fa fa-bars"></i> </span>
+	</header>
+
+	<nav>
+		<a href="#" class="btn-catalogo">Catálogo <i class="fa-solid fa-chevron-down"></i></a>
+		<ul id="nav-catalogo" class="plegar">
+			<li><a id="foco-nav-a" href="categoria.html?categoria=1" class="quitar">Medicamentos</a></li>
+			<li><a id="foco-nav-a" href="categoria.html?categoria=2" class="quitar">Cosméticos</a></li>
+			<li><a id="foco-nav-a" href="categoria.html?categoria=3" class="quitar">Cuidado personal</a></li>
+			<li><a id="foco-nav-a" href="categoria.html?categoria=4" class="quitar">Alimentos y bebidas</a></li>
+		</ul>
+	</nav>
+
+
+	<!-- Slider  ofertas de productos-->
+
+	<section class="section-slide">
+		<div id="slide-item2">
+			<a href="#"><i class="fa-solid fa-circle-xmark"></i></a>
+			<div class="mision">
+				<h2>Misión</h2>
+				<p>
+					<b>Pharmasanté</b> es una empresa legalmente constituida; su misión es la de distribuir y
+					suministrar toda clase de medicamentos para la salud y el bienestar humano, buscando que
+					nuestros usuarios obtengan productos garantizados a precios muy bajos. E nuestra compañía nos
+					empéñanos porque cada persona o empresa nos visite y encuentra de manera fácil y económica, todo
+					lo que necesite con calidad y sobre todo excelente servicio.
+				</p>
+			</div>
+			<div class="vision">
+
+				<h2>Visión</h2>
+				<p>
+					A futuro seremos la empresa líder en prestación de servicios, distribución de medicamentos,
+					productos populares y hospitalarios para la salud e higiene de la comunidad.
+					<br>
+					Lograremos el reconocimiento del mercado, gracias a nuestra filosofía de servicio al cliente y
+					tendencia innovadora, con la cual siempre estaremos comprometidos con lealtad y ética.
+					<br>
+					En cada momento buscaremos excelencia empresarial optimizando tecnología y recursos a nuestros
+					servicios.
+
+				</p>
+			</div>
+		</div>
+		<ul class="section-slide-img">
+			<li class="slide-item1">
+				<div>
+						<h1>Pharmasanté</h1>
+					<h2>
+						Ofrecemos los mejores productos para tu bienestar
+					</h2>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<!-- Catalogo de productos principal -->
+
+	<h3>Más vendidos</h3>
+	<section class="main-catalog">
+	
+
+	</section>
+	<!--Mejor valorados -->
+
+
+	<h3>Mejor valorados</h3>
+	<section class="main-catalog">
+		
+	</section>
+
+<!-- Contacto ubicación -->
+
+<section class="contact">
+	<div class="map1">
+		<h4>Ubícanos</h4>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9629000668715!2d-74.11528318595627!3d4.600667943799587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99308e5937fb%3A0x246c31960777160c!2sCra.%2037%20%2311-14%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1655770702344!5m2!1ses-419!2sco"
+			width="350" height="155" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
+	</div>
+
+	<form action="#" class="contact-form">
+		<Label>Contáctanos</Label>
+		<input type="text" placeholder="Nombre">
+		<input type="text" placeholder="Correo">
+		<textarea name="#" id="#" cols="30" rows="7" placeholder="Su mensaje"></textarea>
+		<button type="submit">Enviar</button>
+	</form>
+</section>
+
+
+	<!-- pie de página -->
+
+	<footer class="main-footer">
+		<ul class="section-footer">
+			<li class="footer-information">
+				<i class="fa-solid fa-house-chimney"></i>
+				<h4>Nuestra droguería</h4>
+				<p>Carrera 37 # 11</p>
+				<p>Bogotá, Colombia</p>
+				<p>Teléfono: 6706952</p>
+			</li>
+		</ul>
+	</footer>
+	<script src="js/menu.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/peticionCatalogo.js"></script>
+	<script src="js/busqueda.js"></script>
+	<script src="js/agregar.js"></script>
+</body>
+
+</html>

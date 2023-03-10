@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #form {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Subir imagen</h2>
+
+    <input type="file" id="imgFile" name="file">
+    <button onclick="subirImg()">Subir</button>
+    <!-- <button onclick="listar()">listar</button> -->
+    <!-- <button onclick="probar()">probar</button> -->
+
+
+
+
+    <script>
+        async function subirImg() {
+            const file = document.getElementById('imgFile');
+            let reader = new FileReader();
+            if (file.files && file.files[0]) {
+                let getFile = file.files[0];
+                let pto = {
+                    "nombre": null,
+                    "categoria": { "codCategoria": 1, "descripcion": "Medicamentos" },
+                    "proveedor": {
+                            "codProveedor": 5, "nombre": "colgate palmolive",
+                            "numContacto": "180005208", "correo": "colgateprofesional@colgateprofesional.net"
+                        },
+                    "nombreImg": "",
+                    "precioCompra": 400, "precioVenta": 600,
+                    "bytesImg": "",
+
+                };
+                let bytes = await encodeFileAsBase64URL(getFile);
+                pto["bytesImg"] = bytes.split(",")[1];
+                console.log(bytes);
+                pto["nombreImg"] = getFile["name"];
+                console.log(pto);
+                await fetch('../inventario/producto', {
+                    method: 'POST',
+                    body: JSON.stringify(pto),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+            } else console.log("vacio");
+
+        }
+
+        async function listar() {
+            let lista = await fetch('../inventario/lista');
+            console.log(lista);
+        }
+
+        async function probar() {
+            let $form = document.querySelector('#form');
+            $form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData($form);
+                console.log(formData);
+                fetch("../inventario/probar", {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Content-Type': 'multipart/form-data; boundary=,'
+                    }
+                });
+            });
+        }
+
+        async function encodeFileAsBase64URL(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.addEventListener('loadend', () => {
+                    resolve(reader.result);
+                });
+                reader.readAsDataURL(file);
+            });
+        };
+
+    </script>
+</body>
+
+</html>

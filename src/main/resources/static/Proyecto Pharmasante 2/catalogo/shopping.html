@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pharmasante</title>
+		<link rel="stylesheet" href="../fontawesome/css/all.css">
+		<link rel="stylesheet" href="css/styleShopping.css">
+		<link rel="stylesheet" href="css/stylePanel.css">
+		<link rel="icon" type="image/png" href="../img/logo.png">
+	</head>
+	<body>
+		
+		<!-- Menu de navegación principal -->
+	
+		<header class="header-panel">
+			<div class="panel-img">
+				<img src="../img/logo.png" alt="">
+				<h4>Bienvenido Cristhian</h4>
+			</div>
+			<a href="../index.html"><i class="fa-solid fa-power-off"></i></a>
+		</header>
+	
+		<!-- Menu de navegación principal -->
+	
+		<nav class="menu-panel menu-plegado">
+			<ul class="menu-panel-enlaces">
+				<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+					</i> <span class="ocultar">Ocultar</span></a></li>
+				<li><a href="cliente.html"><i class="fa-solid fa-house"></i> 
+					<span class="ocultar">Inicio</span></a></li>
+				<li><a href="catalogo.html?categoria=1"><i class="fa-solid fa-pills"></i> <span class="ocultar">Catálogo</span></a></li>
+				<li class="foco"><a href="#"><i class="fa-solid fa-cart-shopping"></i> 
+					<span class="ocultar">Carrito</span></a></li>
+				<li><a href="order.html"><i class="fa-solid fa-list-ol"></i>
+					<span class="ocultar">Pedidos</span></a></li>
+				<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+					<span class="ocultar">Cuenta</span></a></li>
+			</ul>
+		</nav>
+	
+	
+<!-- Sección principal de compra -->
+
+<section>
+	<h3>Productos agregados</h3>
+	<div class="blanket-order">
+
+<!-- Productos agregados al carrito -->
+
+		<div class="contenedor-carrito">
+			<table class="order-description">
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th></th>
+						<th>Precio unidad</th>
+						<th>Cantidad</th>
+						<th>Subtotal</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>	
+					<tr class="order-section">
+						<td><img src="../img/productos/cos5.png" alt=""></td>
+						<td>Removedor de esmalte lander</td>
+						<td>2500</td>
+						<td class="adicionar">
+							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
+							2	
+							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+						</td>
+						<td>5000</td>
+						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+					</tr>
+					<tr class="order-section">
+						<td><img src="../img/productos/producto4.png" alt=""></td>
+						<td>Crema dental sensodine protege y repara</td>
+						<td>7200</td>
+						<td class="adicionar">
+							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
+							1
+							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+						</td>
+						<td>7200</td>
+						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+					</tr>
+					<tr class="order-section">
+						<td><img src="../img/productos/producto14.png" alt=""></td>
+						<td>Jabón protex prohidrata</td>
+						<td>4500</td>
+						<td class="adicionar">
+							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
+							1
+							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
+						</td>
+						<td>4500</td>
+						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+<!-- Resumen de compra -->
+
+		<aside class="bill">
+			<h2>Información del pedido</h2>
+			<div class="domicilio domicilioDisplay">
+				<form action="">
+					<a href="#"><i class="fa-solid fa-circle-xmark close-d"></i></a>
+					<label for="#">Domicilio</label>
+					<input type="text" placeholder="Nombre destinatario">
+					<input type="text" placeholder="Número de contacto">
+					<input type="text" placeholder="Dirección">
+					<button type="submit">Enviar</button>
+				</form>
+			</div>
+			<div class="bill-section total">
+				<p>Total del pedido</p>
+				<p>16700</p>
+			</div>
+			 <div class="bill-section">
+			 	<input type="radio" id="radio1" name="type-buy" value="">
+				<i class="fa-solid fa-truck"></i>
+			 	<label for="">Envio a domicilio</label>
+			 </div>
+			 <div class="bill-section">
+			 	<input type="radio" id="radio2" name="type-buy" value="">
+				<i class="fa-solid fa-house-chimney"></i>
+				<label for="">Recoger en tienda</label>
+			 </div>
+			<div class="bill-submit">
+				 <input type="button" value="Solicitar pedido" id="btn-pedido">			
+			</div> 
+		</aside>
+	</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/domicilio.js"></script>
+<script src="js/panel.js"></script>
+</body>
+</html>

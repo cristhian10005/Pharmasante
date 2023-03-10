@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/formRegistro.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+    <!-- Registro de usuario -->
+
+			<div class="form-register-container">
+				<div class="container-form container-form-login">
+					<form action="#" class="form-register" onsubmit="validar()">
+                        <div class="img-container">
+                            <div class="image-form">
+                                <h1>Pharmasanté</h1>
+                                <div class="enlaces">
+                                    <a href="Registro.html">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                        Registrate</a>
+                                    <a href="index.html">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Regresar</a>
+                                </div>
+                                <img src="img/logo.png" alt="" id="img-login">
+                            </div>
+                        </div>
+					<div class="form-register-input">
+                        <label class="tlo-register">Registra tus datos</label>
+						<input type="text" id="usuario" class="empit"  placeholder=" Nombre de usuario">
+						<input type="password" id="contraseña1" class="empit"  placeholder=" Contraseña">
+                        <div class="fecha">
+							<label>Selecciona tu rol</label>
+							<select name="rol" id="roles">
+								<option value="1">Cliente</option>
+								<option value="2">Vendedor</option>
+								<option value="3">Administrador</option>
+							</select>
+						</div>
+						<input type="button" value="Iniciar sesión" class="btn-register">
+						<a href="#seccion-olvide">Olvide mi contraseña</a>
+                    </div>
+                    <div id="seccion-olvide">
+                        <a href="#"><i class="fa-solid fa-rectangle-xmark"></i></a>
+                        <div>
+						    <h2>Recuperar cuenta</h2>
+						    <p>Ingresa tu correo para enviarte un enlace en cual recuperas tu cuenta</p>
+						    <input type="text">
+                            <button>Recuperar</button>
+                        </div>
+					</div>
+					</form>
+				</div>
+			</div>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

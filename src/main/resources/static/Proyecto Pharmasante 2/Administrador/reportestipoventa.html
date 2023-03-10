@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pharmasante</title>
+	<link rel="stylesheet" href="../fontawesome/css/all.css">
+	<link rel="icon" type="image/png" href="../img/logo.png">
+	<link rel="stylesheet" href="../catalogo/css/stylePanel.css">
+	<link rel="stylesheet" href="css/styleFormP.css">
+	<link rel="stylesheet" href="../vendedor/css/styleVendor.css">
+</head>
+
+<body>
+
+	<!-- Menu de navegación principal -->
+
+	<header class="header-panel">
+		<div class="panel-img">
+			<img src="../img/logo.png" alt="">
+			<h4>Bienvenido Cristhian</h4>
+		</div>
+		<div>
+			<li><a href="#"><i class="fa-solid fa-power-off"></i></a></li>
+		</div>
+	</header>
+
+	<!-- Menu de navegación principal -->
+
+	<nav class="menu-panel menu-plegado">
+		<ul class="menu-panel-enlaces">
+			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
+				</i> <span class="ocultar">Ocultar</span></a></li>
+			<li><a href="productos.html"><i class="fa-solid fa-pills"></i> 
+				<span class="ocultar">Productos</span></a></li>
+			<li><a href="ventas.html"><i class="fa-solid fa-file-invoice-dollar"></i>
+				<span class="ocultar">Ventas</span></a></li>	
+			<li class="foco"><a href="reportes.html"><i class="fa-solid fa-file-lines"></i>
+				<span class="ocultar">Reportes</span></a></li>
+			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+				<span class="ocultar">Cuentas</span></a></li>
+		</ul>
+	</nav>
+
+
+
+	<!-- Catalogo de productos principal -->
+
+	<h2>Resportes del 21-02-2023 al 05-03-2023</h2>
+
+	<section class="table-container">
+			<ul class="lista-tipos-reportes">
+				<li><a href="reportesIngresos.html">Ingresos</a></li>
+				<li><a href="reportesProductos.html">Productos</a></li>
+				<li><a id="foco-a"  href="#">Tipo de entrega</a></li>
+			</ul>
+		<div id="cont-graficos">
+			<canvas id="graficos"></canvas>
+		</div>
+		<table class="tabla">
+			<thead>
+				<tr>
+					<th>Tipo de venta</th>
+					<th>Cantidad de ventas</th>
+					<th>Ganancias generadas</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Domicilo</td>
+					<td>52</td>
+					<td>170000</td>
+				</tr>
+				<tr>
+					<td>Recoger en tienda</td>
+					<td>43</td>
+					<td>180000</td>
+				</tr>
+				<tr>
+					<td>Venta directa</td>
+					<td>29</td>
+					<td>160000</td>
+				</tr>
+				</tbody>
+			</table>
+	</section>
+
+
+	<script src="../catalogo/js/panel.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="js/graficos.js"></script>
+
+	<!-- Scripts enlaces -->
+</body>
+
+</html>

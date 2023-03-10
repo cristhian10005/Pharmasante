@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.form-register-container{
+	background-image: url(../img/slide4.jpg);
+	background-size: cover;
+}
+
+.container-form{
+	background: linear-gradient(90deg, rgba(19, 52, 118, 0.8) 0%, rgba(37, 57, 97, 0.8) 100%);
+    display:flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container-form-login{
+    height: 100vh;
+}
+.form-register{
+    position: relative;
+	background: rgba(255, 255, 255, .9);
+    border-radius: 20px;
+	width: 80%;
+	margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.img-container{
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    background-image: url(../img/slide7.jpg);
+	background-size: cover;
+    width: 45%;
+
+}
+.image-form{
+    background:rgba(55, 86, 180, 0.9);
+    box-shadow: inset 0px 0px 28px 11px rgb(43, 70, 189);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 0 0 20px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.image-form h1{
+    color: #fff;
+}
+.image-form p{
+    color:#fff;
+    width: 80%;
+}
+.enlaces{
+    display: flex;
+    gap: 5px;
+}
+.enlaces a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 3px 5px;
+
+}
+
+.form-register-input{
+    border-radius: 0 20px 20px 0;
+    flex-grow: 2;
+    display: flex;
+    padding: 20px 0;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+    justify-content: center;
+}
+.form-register img{
+    width: 250px;
+}
+#img-login{
+    width: 200px;
+}
+
+.tlo-register{
+	color: rgb(255, 74, 74);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.form-register input, #roles{
+	width: 70%;
+	height: 30px;
+	border: 1px solid rgba(252, 181, 181, 0.8);
+    border-radius: 20px;
+    outline: none;
+    color: rgb(247, 90, 90);
+    padding: 7px;
+}
+.form-register input::placeholder{
+    padding: 1px 7px;
+    color: rgb(250, 97, 97);
+    position: absolute;
+}
+
+.form-register input:focus{
+    border: 1px solid rgb(255, 83, 83);
+}
+
+.btn-register{
+	background: rgba(252, 34, 34, .8);
+    border-radius: 20px;
+    width: 60% !important;
+    color: #fff !important;
+}
+.btn-register:hover{
+    cursor: pointer;
+}
+.form-register-input a{
+    color: rgb(250, 97, 97);
+    text-decoration: none;
+    font-size: 13px;
+}
+.fecha{
+    width: 70%;
+}
+.fecha label{
+	font-size: 13px;
+    color: rgb(250, 117, 117);
+}
+
+.fecha input{
+	width: 150px;
+    color: rgb(248, 100, 100);
+}
+
+#seccion-olvide{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;    
+    background: rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+}
+#seccion-olvide div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+#seccion-olvide h2{
+    color: rgb(255, 74, 74);
+}
+#seccion-olvide a{
+    color: rgb(254, 28, 28);
+}
+#seccion-olvide button{
+    background: rgb(255, 74, 74);
+    color: #fff;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+#seccion-olvide:target{
+    display: flex;
+}
+
+
+/*Querys formulario */
+
+@media (max-width:  900px){
+    .form-register{
+        flex-direction: column;
+    }
+    .img-container{
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+
+    }
+    .image-form{
+        border-radius: 20px 20px 0 0;
+    }
+    .form-register-input{
+        padding: 20px 0;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/formRegistro.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+    <!-- Registro de usuario -->
+
+			<div class="form-register-container">
+				<div class="container-form">
+					<form action="#" class="form-register" onsubmit="validar()">
+                        <div class="img-container">
+                            <div class="image-form">
+                                <h1>Pharmasanté</h1>
+                                <p>Accederas a nuestros servicios, para disfrutar las mejores ofertas</p>
+                                <div class="enlaces">
+									<a href="login.html">
+										<i class="fa-solid fa-user-check"></i>
+                                        ¿Tienes cuenta?</a>
+                                    <a href="index.html">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Regresar</a>
+                                </div>
+                                <img src="img/logo.png" alt="">
+                            </div>
+                        </div>
+					<div class="form-register-input">
+                        <label for="#" class="tlo-register">Registra tus datos</label>
+						<input type="text" id="nombre" class="empit" placeholder=" Nombres">
+						<input type="text" id="apellido" class="empit"  placeholder=" Apellidos">
+						<input type="text" id="identificacion" class="empit"  placeholder=" Número de identificación">
+						<input type="text" id="contacto" class="empit"  placeholder=" Número de contacto">
+						<input type="text" id="correo" class="empit"  placeholder=" Correo">
+						<div class="fecha">
+							<label for="#">Fecha de nacimiento</label>
+							<input type="date">
+						</div>
+							<input type="text" id="usuario" class="empit"  placeholder=" Nombre de usuario">
+							<input type="password" id="contraseña1" class="empit"  placeholder=" Contraseña">
+							<input type="password" id="contraseña2" class="empit"  placeholder=" Repetir contraseña">
+						<div class="fecha">
+							<label>Selecciona tu rol</label>
+							<select name="rol" id="roles">
+								<option value="1">Cliente</option>
+								<option value="2">Vendedor</option>
+								<option value="3">Administrador</option>
+							</select>
+						</div>
+						<input type="submit" value="Registrarse" class="btn-register">
+                    </div>
+					</form>
+				</div>
+			</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
