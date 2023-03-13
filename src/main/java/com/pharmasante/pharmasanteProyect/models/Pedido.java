@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -37,5 +38,9 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    Usuario ususario;
+    Usuario usuario;
+
+    @OneToMany(mappedBy ="pedido")
+    List<DetallePedido>detalle;
+
 }

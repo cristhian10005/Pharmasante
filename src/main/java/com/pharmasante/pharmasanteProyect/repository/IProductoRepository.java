@@ -28,5 +28,4 @@ public interface IProductoRepository extends JpaRepository<Producto, Integer> {
     List<Producto> busqueda(@Param("nombre") String nombre);
 
 
-
 }

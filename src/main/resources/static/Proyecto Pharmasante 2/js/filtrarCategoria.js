@@ -11,12 +11,6 @@ async function filtroCategoria() {
         
         let enlaces = document.querySelectorAll(".enlace-sin");
         let catalogo = document.querySelector(".categoria-filtro");
-        let ruta ="../catalogo/filtro/";
-        let rutaImg ='';
-        if(catalogo.classList.contains("cliente")){
-             ruta = "../../catalogo/filtro/";
-             rutaImg ='../';
-        }
 
        enlaces.forEach((e)=>{
         if(e.classList.contains("foco-nav-a"))e.classList.remove("foco-nav-a");
@@ -24,7 +18,7 @@ async function filtroCategoria() {
        let focoA = parseInt(dato) - 1;
        if(focoA<=3) enlaces[focoA].classList.add("foco-nav-a");
 
-        const request = await fetch(ruta+dato, {
+        const request = await fetch('../catalogo/filtro/'+dato, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -40,7 +34,7 @@ async function filtroCategoria() {
                 filtro +='</section><section class="main-catalog">'
             }
             filtro += `	<div class="main-catalog-section1">
-                            <div><img src="${rutaImg}${produc.imagen}" alt=""></div>
+                            <div><img src="${produc.imagen}" alt=""></div>
                             <ul class="main-catalog-section1-item">
                                 <li><p>${produc.nombre}</p></li>
                                 <li><p>$${produc.precioVenta}</p></li>
@@ -53,7 +47,7 @@ async function filtroCategoria() {
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                     </div>
-                                <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
+                                <button class="btn-catalog" onclick="agregar()">Agregar</button>
                             </div>
                         </div>`
                         contador++;

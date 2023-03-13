@@ -1,5 +1,6 @@
 package com.pharmasante.pharmasanteProyect.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class DetallePedido {
     @Column(name = "id_rol")
     private Integer id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_pedido")
     Pedido pedido;

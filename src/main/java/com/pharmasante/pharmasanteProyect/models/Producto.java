@@ -3,8 +3,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -46,4 +45,16 @@ public class Producto {
     @Column(name = "stock")
     private Integer stock;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Producto)) return false;
+        Producto producto = (Producto) o;
+        return Objects.equals(getIdProducto(), producto.getIdProducto());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdProducto());
+    }
 }
