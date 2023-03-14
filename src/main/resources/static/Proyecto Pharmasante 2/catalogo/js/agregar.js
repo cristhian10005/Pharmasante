@@ -34,5 +34,8 @@ function iniciarBotones(dato){
     btnFiltro[1].addEventListener('click',()=>cargarCategoria(dato, 'catalogo.html'));
     
     let btnBuscar= document.getElementById("btn-buscar");
-    btnBuscar.addEventListener("click", ()=>{buscar(dato)});
+    btnBuscar.addEventListener("click", ()=>buscar(dato));
+
+    let agregarShop = document.getElementById("agregar-shop");
+    agregarShop.addEventListener("click",()=>agregar(dato));
 }

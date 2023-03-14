@@ -15,20 +15,20 @@ import javax.persistence.*;
 public class DetallePedido {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "id_rol")
+    @Column(name = "id_registro")
     private Integer id;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_pedido")
-    Pedido pedido;
+    private Pedido pedido;
 
     @Column(name = "cantidad")
     private int cantidad;
 
     @ManyToOne
     @JoinColumn(name = "id_producto")
-    Producto producto;
+    private Producto producto;
 
     @Column(name = "subtotal")
     private int subtotal;

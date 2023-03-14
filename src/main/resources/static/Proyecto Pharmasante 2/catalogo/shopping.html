@@ -60,43 +60,8 @@
 						<th></th>
 					</tr>
 				</thead>
-				<tbody>	
-					<tr class="order-section">
-						<td><img src="../img/productos/cos5.png" alt=""></td>
-						<td>Removedor de esmalte lander</td>
-						<td>2500</td>
-						<td class="adicionar">
-							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
-							2	
-							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
-						</td>
-						<td>5000</td>
-						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-					</tr>
-					<tr class="order-section">
-						<td><img src="../img/productos/producto4.png" alt=""></td>
-						<td>Crema dental sensodine protege y repara</td>
-						<td>7200</td>
-						<td class="adicionar">
-							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
-							1
-							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
-						</td>
-						<td>7200</td>
-						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-					</tr>
-					<tr class="order-section">
-						<td><img src="../img/productos/producto14.png" alt=""></td>
-						<td>Jabón protex prohidrata</td>
-						<td>4500</td>
-						<td class="adicionar">
-							<a href="#"><i class="fa-solid fa-angle-left"></i></a>
-							1
-							<a href="#"><i class="fa-solid fa-angle-right"></i></a>
-						</td>
-						<td>4500</td>
-						<td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-					</tr>
+				<tbody id="tabla-shop">	
+					
 				</tbody>
 			</table>
 		</div>
@@ -115,20 +80,21 @@
 					<button type="submit">Enviar</button>
 				</form>
 			</div>
-			<div class="bill-section total">
-				<p>Total del pedido</p>
-				<p>16700</p>
+			<div id="detalle-pedido">
+				<div class="bill-section total">
+
+				</div>
+				 <div class="bill-section">
+					 <input type="radio" id="radio1" name="type-buy" value="">
+					<i class="fa-solid fa-truck"></i>
+					 <label for="">Envio a domicilio</label>
+				 </div>
+				 <div class="bill-section">
+					 <input type="radio" id="radio2" name="type-buy" value="">
+					<i class="fa-solid fa-house-chimney"></i>
+					<label for="">Recoger en tienda</label>
+				 </div>
 			</div>
-			 <div class="bill-section">
-			 	<input type="radio" id="radio1" name="type-buy" value="">
-				<i class="fa-solid fa-truck"></i>
-			 	<label for="">Envio a domicilio</label>
-			 </div>
-			 <div class="bill-section">
-			 	<input type="radio" id="radio2" name="type-buy" value="">
-				<i class="fa-solid fa-house-chimney"></i>
-				<label for="">Recoger en tienda</label>
-			 </div>
 			<div class="bill-submit">
 				 <input type="button" value="Solicitar pedido" id="btn-pedido">			
 			</div> 
@@ -138,6 +104,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/domicilio.js"></script>
+<script src="js/solicitudCarrito.js"></script>
 <script src="js/panel.js"></script>
 </body>
 </html>

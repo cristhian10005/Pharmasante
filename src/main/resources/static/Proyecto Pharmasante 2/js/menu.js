@@ -4,7 +4,7 @@ let headerList = document.querySelector(".header-list");
 let menuList = document.querySelector(".menu-list");
 let upDown1 = -300;
 
-barsBtn.addEventListener("click", UpDown)
+if (barsBtn!=null)barsBtn.addEventListener("click", UpDown)
 
 function UpDown(){
 	if (upDown1 === -300) upDown1 = 70;

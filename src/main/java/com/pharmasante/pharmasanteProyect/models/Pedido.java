@@ -18,7 +18,7 @@ import java.util.List;
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pedido ")
+    @Column(name = "id_pedido")
     private Integer id;
 
     @Column(name = "precio_pedido")
@@ -30,7 +30,7 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_pedido ")
-    TipoPedido tipoPedido;
+    private TipoPedido tipoPedido;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_solicitud")
@@ -38,9 +38,9 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    Usuario usuario;
+    private Usuario usuario;
 
     @OneToMany(mappedBy ="pedido")
-    List<DetallePedido>detalle;
+    private List<DetallePedido>detalle;
 
 }
