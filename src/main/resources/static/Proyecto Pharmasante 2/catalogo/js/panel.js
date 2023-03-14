@@ -35,3 +35,18 @@ for (let i = 0; i < filas.length; i++) {
       });
 }
  
+function iniciarBotones(dato){
+
+    let btnFiltro = document.querySelectorAll('.btn-cargar');
+    btnFiltro[0].addEventListener('click',()=>navegacion(dato, 'cliente.html'));
+    btnFiltro[1].addEventListener('click',()=>navegacion(dato, 'catalogo.html'));
+    btnFiltro[2].addEventListener('click',()=>navegacion(dato, 'shopping.html'));
+    btnFiltro[3].addEventListener('click',()=>navegacion(dato, 'order.html'));
+    btnFiltro[4].addEventListener('click',()=>navegacion(dato, 'account.html'));
+}
+
+function navegacion(dato, url){
+    dato.idServicio = 1;
+    let encript = btoa(JSON.stringify(dato));
+    location.href =url+'?encript='+encript;
+}

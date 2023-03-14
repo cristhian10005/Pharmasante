@@ -27,12 +27,8 @@ function cargarCategoria(dato, url){
 }
 
 
-function iniciarBotones(dato){
+function accionProducto(dato){
 
-    let btnFiltro = document.querySelectorAll('.btn-cargar');
-    btnFiltro[0].addEventListener('click',()=>cargarCategoria(dato, 'cliente.html'));
-    btnFiltro[1].addEventListener('click',()=>cargarCategoria(dato, 'catalogo.html'));
-    
     let btnBuscar= document.getElementById("btn-buscar");
     btnBuscar.addEventListener("click", ()=>buscar(dato));
 

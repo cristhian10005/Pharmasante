@@ -36,5 +36,6 @@ async function listaCarrito() {
         total.innerHTML  = `<p>Total del pedido</p> <p>${catalogoJson.pedido.precioPedido}</p>`;
         talbaShop.innerHTML = carritolist;
     }
+    iniciarBotones(dato);
 
 }
