@@ -9,7 +9,7 @@ async function catalogoPrincipal() {
         "busqueda": ""    
     };
 
-
+    setData(dato);
     let catalogo = document.querySelectorAll(".main-catalog");
     const request = await fetch('../../catalogo/cliente', {
         method: 'POST',
@@ -57,11 +57,12 @@ async function catalogoPrincipal() {
                                     <a href=""><i class="fa-solid fa-star"></i></a>
                                     <a href=""><i class="fa-solid fa-star"></i></a>
                                 </div>
-                            <button class="btn-catalog" onclick="agregar(${dato})">Agregar</button>
+                            <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                          </div>
                         </div>`
     }
     catalogo[0].innerHTML = vendidos;
     catalogo[1].innerHTML = valorados;
     iniciarBotones(dato);
+    accionProducto(dato);
 }

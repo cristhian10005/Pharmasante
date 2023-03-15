@@ -5,6 +5,7 @@ async function listaCarrito() {
     const data = urlParams.get('encript');
     let dato = JSON.parse(atob(data));
     if(dato !=null){
+        setData(dato);
         let talbaShop = document.getElementById("tabla-shop");
         let total = document.querySelector(".total");
 
@@ -24,12 +25,13 @@ async function listaCarrito() {
             <td>${produc.producto.nombre}</td>
             <td>${produc.producto.precioVenta}</td>
             <td class="adicionar">
-                <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" onclick="unidades(${produc.id}, 'resta')"><i class="fa-solid fa-angle-left"></i></a>
                 ${produc.cantidad}	
-                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                <a href="#" onclick="unidades(${produc.id}, 'suma')"><i class="fa-solid fa-angle-right"></i></a>
             </td>
             <td>  ${produc.subtotal}	</td>
-            <td class="eliminar"><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+            <td class="eliminar"><a href="#"  onclick="eliminarUnd(${produc.id})">
+            <i class="fa-regular fa-circle-xmark"></i></a></td>
         </tr> `;
 
     }

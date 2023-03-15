@@ -22,6 +22,7 @@ async function filtroNombre() {
         });
 
         const catalogoJson = await request.json();
+        setData(dato);
         let contador= 0;
         let filtro = '<section class="main-catalog">';
         for (let produc of catalogoJson.listaProducto) {
@@ -43,7 +44,7 @@ async function filtroNombre() {
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                     </div>
-                                <button class="btn-catalog" onclick="agregar()">Agregar</button>
+                                <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                             </div>
                         </div>`
         }
@@ -51,4 +52,5 @@ async function filtroNombre() {
         catalogo.innerHTML = filtro;
     }
     iniciarBotones(dato);
+    accionProducto(dato);
 }

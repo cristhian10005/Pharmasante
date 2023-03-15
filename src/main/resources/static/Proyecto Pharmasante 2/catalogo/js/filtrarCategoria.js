@@ -17,7 +17,7 @@ async function filtroCategoria() {
        });
        let focoA = parseInt(dato.idServicio) - 1;
        if(focoA<=3) enlaces[focoA].classList.add("foco-nav-a");
-
+       
         const request = await fetch('../../catalogo/filtrocl', {
             method: 'POST',
             body: JSON.stringify(dato),
@@ -27,6 +27,7 @@ async function filtroCategoria() {
             }
         });
         const catalogoJson = await request.json();
+        setData(dato);
         let contador= 0;
         let filtro = '<section class="main-catalog">';
         for (let produc of catalogoJson.listaProducto) {
@@ -48,7 +49,7 @@ async function filtroCategoria() {
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                         <a href=""><i class="fa-solid fa-star"></i></a>
                                     </div>
-                                <button class="btn-catalog" onclick="agregar()">Agregar</button>
+                                <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                             </div>
                         </div>`
                         contador++;
@@ -57,5 +58,6 @@ async function filtroCategoria() {
         catalogo.innerHTML = filtro;
     }
     iniciarBotones(dato);
+    accionProducto(dato);
 }
 

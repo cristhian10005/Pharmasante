@@ -35,7 +35,7 @@ public class PedidosController {
     }
     @PutMapping("/carritound")
     public void carritoUndidades(@RequestBody UsuarioEntradaDto usuario){
-        pedidosService.adicionarUnidades(usuario.getIdCliente(), usuario.getBusqueda());
+        pedidosService.adicionarUnidades(usuario.getIdServicio(), usuario.getBusqueda());
     }
 
     @DeleteMapping("/carritodel")

@@ -1,6 +1,23 @@
-function agregar(dato){
-    let encript = btoa(JSON.stringify(dato));
-    location.href ='shopping.html?encript='+encript;
+var dataBtn ={};
+function setData(dato){
+    dataBtn = dato;
+}
+
+async function agregar(id){
+    dataBtn.idServicio = id;
+    const request = await fetch('../../pedidos/carritoadd', {
+        method: 'POST',
+        body: JSON.stringify(dataBtn),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+
+    Swal.fire({
+    icon: 'success',
+    title: 'Producto agregado'
+  })
 }
 
 function enlazar(id, dato){
@@ -31,7 +48,53 @@ function accionProducto(dato){
 
     let btnBuscar= document.getElementById("btn-buscar");
     btnBuscar.addEventListener("click", ()=>buscar(dato));
+}
 
-    let agregarShop = document.getElementById("agregar-shop");
-    agregarShop.addEventListener("click",()=>agregar(dato));
+async function unidades(id, tipo){
+    dataBtn.idServicio = id;
+    dataBtn.busqueda =tipo;
+    const request = await fetch('../../pedidos/carritound', {
+        method: 'PUT',
+        body: JSON.stringify(dataBtn),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+
+    location. reload();
+}
+async function eliminarUnd(id){
+    dataBtn.idServicio = id;
+    let condfirmado = false;
+    await Swal.fire({
+        title: 'Seguro',
+        text: "Desea eliminar el producto",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            condfirmado = true;
+               fetch('../../pedidos/carritodel', {
+                method: 'DELETE',
+                body: JSON.stringify(dataBtn),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
+      })
+
+      if(condfirmado){
+        await Swal.fire(
+                'Eliminado',
+                'Producto eliminado con exito',
+                'success'
+            );
+            location. reload();
+      }
 }

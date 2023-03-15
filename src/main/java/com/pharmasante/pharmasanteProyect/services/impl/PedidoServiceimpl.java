@@ -69,9 +69,11 @@ public class PedidoServiceimpl implements IPedidosService {
                 });
         if (tipo.equals("suma") && detalle.getCantidad() <10 ){
             detalle.setCantidad(detalle.getCantidad() + 1);
+            detalle.setSubtotal(detalle.getCantidad() * detalle.getProducto().getPrecioVenta());
             detallePedidoRepository.save(detalle);
         }else if(tipo.equals("resta") && detalle.getCantidad()>1) {
             detalle.setCantidad(detalle.getCantidad() - 1);
+            detalle.setSubtotal(detalle.getCantidad() * detalle.getProducto().getPrecioVenta());
             detallePedidoRepository.save(detalle);
         }else {
             throw new ProductException("La cantidad solicitada debe ser mayor a 1 y menor a 10",
