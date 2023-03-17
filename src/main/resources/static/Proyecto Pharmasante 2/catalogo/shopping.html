@@ -75,10 +75,10 @@
 				<form action="">
 					<a href="#"><i class="fa-solid fa-circle-xmark close-d"></i></a>
 					<label for="#">Domicilio</label>
-					<input type="text" placeholder="Nombre destinatario">
-					<input type="text" placeholder="Número de contacto">
-					<input type="text" placeholder="Dirección">
-					<button type="submit">Enviar</button>
+					<input type="text" id="destinatario" placeholder="Nombre destinatario">
+					<input type="text" id="contacto" placeholder="Número de contacto">
+					<input type="text" id="direccion" placeholder="Dirección">
+					<input type="button" id="btn-domicilio" value="Enviar">
 				</form>
 			</div>
 			<div id="detalle-pedido">
@@ -86,12 +86,12 @@
 
 				</div>
 				 <div class="bill-section">
-					 <input type="radio" id="radio1" name="type-buy" value="">
+					 <input type="radio" id="domicilio-r" name="type-buy" value="">
 					<i class="fa-solid fa-truck"></i>
 					 <label for="">Envio a domicilio</label>
 				 </div>
 				 <div class="bill-section">
-					 <input type="radio" id="radio2" name="type-buy" value="">
+					 <input type="radio" id="tienda-r" name="type-buy" value="">
 					<i class="fa-solid fa-house-chimney"></i>
 					<label for="">Recoger en tienda</label>
 				 </div>
@@ -105,8 +105,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/panel.js"></script>
-<script src="js/domicilio.js"></script>
 <script src="js/agregar.js"></script>
 <script src="js/solicitudCarrito.js"></script>
+<script src="js/domicilio.js"></script>
 </body>
 </html>

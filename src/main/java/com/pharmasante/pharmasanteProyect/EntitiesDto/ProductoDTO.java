@@ -15,13 +15,14 @@ public class ProductoDTO {
 
   @NotNull(message = "El campo nombre no debe ir nulo")
   @NotBlank(message = "El campo nombre no puede ir en blanco")
-  @Size(min = 3, max = 30, message = "El nombre debe medir entre 3 y 20")
+  @Size(min = 3, max = 30, message = "El nombre debe contener entre 3 y 20 letras")
   private String nombre;
   @NotNull(message = "Debe asignarse una categoria")
   private Categoria categoria;
 
   @NotNull(message = "Debe asignarse un proveedor")
   private Proveedor proveedor;
+  @NotNull(message = "Debe asignarse una imagen")
   private String nombreImg;
 
   @NotNull(message = "El campo precio compra no debe ir nulo")

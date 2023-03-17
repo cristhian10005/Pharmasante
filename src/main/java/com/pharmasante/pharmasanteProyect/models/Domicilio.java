@@ -4,10 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GeneratorType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalTime;
 
 @Entity
@@ -16,7 +19,12 @@ import java.time.LocalTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Domicilio extends Pedido{
+public class Domicilio{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_domicilio")
+    private Integer id;
+
     @Column(name = "nombre_destinatario")
     private String nombreDestinatario;
 
@@ -31,5 +39,9 @@ public class Domicilio extends Pedido{
 
     @Column(name= "tiempo_estimado")
     private LocalTime tiempoEstimado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
 
 }

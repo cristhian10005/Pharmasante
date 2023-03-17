@@ -6,6 +6,7 @@ import com.pharmasante.pharmasanteProyect.EntitiesDto.ProductoDTO;
 import com.pharmasante.pharmasanteProyect.repository.IProductoRepository;
 import com.pharmasante.pharmasanteProyect.services.IStorageService;
 import com.pharmasante.pharmasanteProyect.services.IProductoService;
+import com.pharmasante.pharmasanteProyect.services.IValidaciones;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
@@ -19,9 +20,8 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ProductoServicesimpl implements IProductoService {
 
-
     private IProductoRepository iproductoRepository;
-
+    private IValidaciones validaciones;
     private IStorageService storageService;
     @Override
     public List<Producto> listaProductos(){
@@ -29,7 +29,7 @@ public class ProductoServicesimpl implements IProductoService {
     }
     @Override
     public Producto guardarProducto(ProductoDTO productoDTO, Errors errors){
-       validacionDeErrores(errors);
+       validaciones.validacionDeErrores(errors);
         String ruta = storageService.store(productoDTO);
         Producto producto = productoDTO.productoDTOtoEntity(ruta);
         return iproductoRepository.save(producto);
@@ -52,18 +52,4 @@ public class ProductoServicesimpl implements IProductoService {
     public Producto actualizarProducto(ProductoDTO productoDTO,Errors errors){
         return guardarProducto(productoDTO, errors);
     }
-
-
-
-    public void validacionDeErrores(Errors errors){
-       if (errors.getAllErrors() != null){
-           Optional<String> mensaje = errors.getAllErrors().stream()
-                   .map(objErr -> objErr.getDefaultMessage())
-                   .findFirst();
-           mensaje.ifPresent(m-> {
-               throw new ProductException(m,"Campo mal diligenciado");
-           });
-       }
-    }
-
 }

@@ -2,14 +2,19 @@ package com.pharmasante.pharmasanteProyect.RepositoryTest;
 
 import com.pharmasante.pharmasanteProyect.models.EstadoPedido;
 import com.pharmasante.pharmasanteProyect.models.Pedido;
+import com.pharmasante.pharmasanteProyect.models.RecogerEnTienda;
 import com.pharmasante.pharmasanteProyect.models.Usuario;
 import com.pharmasante.pharmasanteProyect.repository.IEstadoPedidoRepository;
 import com.pharmasante.pharmasanteProyect.repository.IPedidoRepository;
+import com.pharmasante.pharmasanteProyect.repository.IRecogenrEnTiendaRepository;
 import com.pharmasante.pharmasanteProyect.repository.IUsuarioRepository;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import java.time.LocalDate;
 
 @DataJpaTest
 public class PedidoRepositoryTest {
@@ -19,6 +24,8 @@ public class PedidoRepositoryTest {
     IEstadoPedidoRepository estadoPedidoRepository;
     @Autowired
     IPedidoRepository pedidoRepository;
+    @Autowired
+    IRecogenrEnTiendaRepository recogenrEnTiendaRepository;
 
     @Test
     void testBuscarPedido(){
@@ -56,6 +63,25 @@ public class PedidoRepositoryTest {
         Assertions.assertThat(pedidoRepository.findByUsuarioAndEstado(usuario3, estadoPedido3).isEmpty());
         Assertions.assertThat(pedidoRepository.findByUsuarioAndEstado(usuario3, estadoPedido).isEmpty());
         Assertions.assertThat(pedidoRepository.findByUsuarioAndEstado(usuario, estadoPedido3).isEmpty());
+
+
+    }
+    @Test
+    void recogerEnTiendaTest(){
+        Usuario usuario = new Usuario(1,"Carlos123","Carlos","Paez","correo",
+                "123","10222", null,"322222",null);
+        EstadoPedido estadoPedido = new EstadoPedido(1,"pre-solicitado");
+        Pedido pedido = new Pedido(null,500,estadoPedido,null,
+                null,usuario,null);
+        usuarioRepository.save(usuario);
+        estadoPedidoRepository.save(estadoPedido);
+        pedidoRepository.save(pedido);
+        RecogerEnTienda recogerEnTienda = new RecogerEnTienda();
+        recogerEnTienda.setPedido(pedido);
+        recogerEnTienda.setFecha_limite(LocalDate.now());
+        recogerEnTienda.setId(pedido.getId());
+        RecogerEnTienda r= recogenrEnTiendaRepository.save(recogerEnTienda);
+        Assertions.assertThat(r).isNotNull();
 
 
     }

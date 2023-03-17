@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "pedidos")
 @Data
 @AllArgsConstructor
@@ -19,28 +18,28 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")
-    private Integer id;
+    protected Integer id;
 
     @Column(name = "precio_pedido")
-    private Integer precioPedido;
+    protected Integer precioPedido;
 
     @ManyToOne
     @JoinColumn(name = "id_estado_pedido ")
-    EstadoPedido estado;
+    protected EstadoPedido estado;
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_pedido ")
-    private TipoPedido tipoPedido;
+    protected TipoPedido tipoPedido;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_solicitud")
-    private LocalDate fechaSolicitud;
+    protected LocalDate fechaSolicitud;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    protected Usuario usuario;
 
     @OneToMany(mappedBy ="pedido")
-    private List<DetallePedido>detalle;
+    protected List<DetallePedido>detalle;
 
 }

@@ -5,10 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "recoger_tienda")
@@ -16,9 +15,14 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecogerEnTienda extends Pedido{
+public class RecogerEnTienda {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_recoger_tienda")
+    private Integer id;
+    @OneToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
     @Column(name = "fecha_limite")
     private LocalDate fecha_limite;
-
-
 }

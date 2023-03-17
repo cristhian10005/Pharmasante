@@ -5,6 +5,7 @@ function setData(dato){
 
 async function agregar(id){
     dataBtn.idServicio = id;
+   try{
     const request = await fetch('../../pedidos/carritoadd', {
         method: 'POST',
         body: JSON.stringify(dataBtn),
@@ -13,11 +14,23 @@ async function agregar(id){
             'Content-Type': 'application/json'
         }
     });
-
+    if(request.ok){ 
+        Swal.fire({
+            icon: 'success',
+            title: 'Producto agregado'
+          });
+    }else{
+        let error = await request.json();
+        throw new Error(error.message);
+    }
+   }catch(error){
     Swal.fire({
-    icon: 'success',
-    title: 'Producto agregado'
-  })
+        icon: 'warning',
+        title: error,
+        text: 'Para agregar más unidades de este producto, dirígete al carrito de compra'
+      });
+   }
+
 }
 
 function enlazar(id, dato){
@@ -62,7 +75,15 @@ async function unidades(id, tipo){
         }
     });
 
+   if(request.ok){
     location. reload();
+   }else{
+    let errorJSon = await request.json();
+        Swal.fire({
+        icon: 'error',
+        title: errorJSon.message
+        });
+   }
 }
 async function eliminarUnd(id){
     dataBtn.idServicio = id;

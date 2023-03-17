@@ -1,6 +1,7 @@
 package com.pharmasante.pharmasanteProyect.controller;
 
 import com.pharmasante.pharmasanteProyect.EntitiesDto.ClienteSalidaDto;
+import com.pharmasante.pharmasanteProyect.EntitiesDto.DomicilioDto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.IDto.IAccionRol;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.UsuarioEntradaDto;
 import com.pharmasante.pharmasanteProyect.models.Pedido;
@@ -10,8 +11,10 @@ import com.pharmasante.pharmasanteProyect.services.IPedidosService;
 import com.pharmasante.pharmasanteProyect.services.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -41,6 +44,19 @@ public class PedidosController {
     @DeleteMapping("/carritodel")
     public void eliminarDeCarrito(@RequestBody UsuarioEntradaDto usuario){
         pedidosService.eliminarProductoCarrito(usuario.getIdServicio());
+    }
+
+
+    //Solicitud de pedidos
+
+    @PostMapping("/recoger")
+    public void enviarRecogerTienda(@RequestBody UsuarioEntradaDto usuario){
+        pedidosService.solicituTienda(usuario.getIdServicio());
+    }
+
+    @PostMapping("/domicilio")
+    public void enviarDomicilio(@Valid @RequestBody DomicilioDto domicilio, Errors errors){
+        pedidosService.solicitudDomicilio(domicilio, errors);
     }
 
 }

@@ -11,6 +11,10 @@ h2{
     padding: 70px 0 0 70px;
     color: rgb(189, 7, 40);
 }
+h2 {
+    width: 95% !important;
+    margin-left: 5%;
+}
 .table-container{
     margin:25px 5%;
     overflow-x: auto;

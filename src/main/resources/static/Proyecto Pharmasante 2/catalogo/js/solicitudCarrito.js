@@ -17,26 +17,33 @@ async function listaCarrito() {
                 'Content-Type': 'application/json'
             }
         });
-        const catalogoJson = await request.json();
-        let carritolist = '';
-        for (let produc of catalogoJson.pedido.detalle) {
-            carritolist +=  `<tr class="order-section">
-            <td><img src="../${produc.producto.imagen}" alt=""></td>
-            <td>${produc.producto.nombre}</td>
-            <td>${produc.producto.precioVenta}</td>
-            <td class="adicionar">
-                <a href="#" onclick="unidades(${produc.id}, 'resta')"><i class="fa-solid fa-angle-left"></i></a>
-                ${produc.cantidad}	
-                <a href="#" onclick="unidades(${produc.id}, 'suma')"><i class="fa-solid fa-angle-right"></i></a>
-            </td>
-            <td>  ${produc.subtotal}	</td>
-            <td class="eliminar"><a href="#"  onclick="eliminarUnd(${produc.id})">
-            <i class="fa-regular fa-circle-xmark"></i></a></td>
-        </tr> `;
 
-    }
-        total.innerHTML  = `<p>Total del pedido</p> <p>${catalogoJson.pedido.precioPedido}</p>`;
-        talbaShop.innerHTML = carritolist;
+        if(request.ok){
+            const catalogoJson = await request.json();
+            let carritolist = '';
+    
+            for (let produc of catalogoJson.pedido.detalle) {
+                carritolist +=  `<tr class="order-section">
+                <td><img src="../${produc.producto.imagen}" alt=""></td>
+                <td>${produc.producto.nombre}</td>
+                <td>${produc.producto.precioVenta}</td>
+                <td class="adicionar">
+                    <a href="#" onclick="unidades(${produc.id}, 'resta')"><i class="fa-solid fa-angle-left"></i></a>
+                    ${produc.cantidad}	
+                    <a href="#" onclick="unidades(${produc.id}, 'suma')"><i class="fa-solid fa-angle-right"></i></a>
+                </td>
+                <td>  ${produc.subtotal}	</td>
+                <td class="eliminar"><a href="#"  onclick="eliminarUnd(${produc.id})">
+                <i class="fa-regular fa-circle-xmark"></i></a></td>
+            </tr> `;
+    
+        }
+            total.innerHTML  = `<p>Total del pedido</p> <p>${catalogoJson.pedido.precioPedido}</p>`;
+            talbaShop.innerHTML = carritolist;
+            enviarPedido(dato, catalogoJson.pedido.id);
+        }else{
+            enviarPedido(dato, 0);
+        }
     }
     iniciarBotones(dato);
 

@@ -6,7 +6,8 @@ async function catalogoPrincipal() {
         "idCliente": 1,
         "nombre": "Cristhian",
         "idServicio": 0,
-        "busqueda": ""    
+        "busqueda": "",
+        "contacto": ""    
     };
 
     setData(dato);
