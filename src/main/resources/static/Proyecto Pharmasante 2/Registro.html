@@ -14,7 +14,7 @@
 
 			<div class="form-register-container">
 				<div class="container-form">
-					<form action="#" class="form-register" onsubmit="validar()">
+					<form class="form-register" >
                         <div class="img-container">
                             <div class="image-form">
                                 <h1>Pharmasanté</h1>
@@ -39,7 +39,7 @@
 						<input type="text" id="correo" class="empit"  placeholder=" Correo">
 						<div class="fecha">
 							<label for="#">Fecha de nacimiento</label>
-							<input type="date">
+							<input type="date" id="fecha">
 						</div>
 							<input type="text" id="usuario" class="empit"  placeholder=" Nombre de usuario">
 							<input type="password" id="contraseña1" class="empit"  placeholder=" Contraseña">
@@ -49,15 +49,15 @@
 							<select name="rol" id="roles">
 								<option value="1">Cliente</option>
 								<option value="2">Vendedor</option>
-								<option value="3">Administrador</option>
 							</select>
 						</div>
-						<input type="submit" value="Registrarse" class="btn-register">
+						<input type="button" onclick="validarRegistro()" value="Registrarse" class="btn-register">
                     </div>
 					</form>
 				</div>
 			</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/registro.js"></script>
 </body>
 </html>

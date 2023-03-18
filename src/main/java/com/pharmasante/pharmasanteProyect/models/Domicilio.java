@@ -4,13 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.time.LocalTime;
 
 @Entity
@@ -37,8 +31,8 @@ public class Domicilio{
     @Column(name= "hora_envio")
     private LocalTime horaEnvio;
 
-    @Column(name= "tiempo_estimado")
-    private LocalTime tiempoEstimado;
+    @Column(name= "hora_llegada")
+    private LocalTime hora_llegada;
 
     @ManyToOne
     @JoinColumn(name = "id_pedido")

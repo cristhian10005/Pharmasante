@@ -33,15 +33,7 @@
                         <label class="tlo-register">Registra tus datos</label>
 						<input type="text" id="usuario" class="empit"  placeholder=" Nombre de usuario">
 						<input type="password" id="contraseña1" class="empit"  placeholder=" Contraseña">
-                        <div class="fecha">
-							<label>Selecciona tu rol</label>
-							<select name="rol" id="roles">
-								<option value="1">Cliente</option>
-								<option value="2">Vendedor</option>
-								<option value="3">Administrador</option>
-							</select>
-						</div>
-						<input type="button" value="Iniciar sesión" class="btn-register">
+						<input type="button" onclick="validarUsuario()" value="Iniciar sesión" class="btn-register">
 						<a href="#seccion-olvide">Olvide mi contraseña</a>
                     </div>
                     <div id="seccion-olvide">
@@ -57,5 +49,6 @@
 				</div>
 			</div>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="js/registro.js"></script>
 </body>
 </html>

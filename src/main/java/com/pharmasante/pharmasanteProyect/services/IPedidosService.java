@@ -1,6 +1,7 @@
 package com.pharmasante.pharmasanteProyect.services;
 
 import com.pharmasante.pharmasanteProyect.EntitiesDto.DomicilioDto;
+import com.pharmasante.pharmasanteProyect.EntitiesDto.PedidosDto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.UsuarioEntradaDto;
 import com.pharmasante.pharmasanteProyect.models.Pedido;
 import org.springframework.validation.Errors;
@@ -12,4 +13,5 @@ public interface IPedidosService {
       void eliminarProductoCarrito(int idDetalle);
       void solicituTienda(int idPedido);
       void solicitudDomicilio(DomicilioDto domicilio, Errors errors);
+    PedidosDto listaPedidos(int idUsuario);
 }

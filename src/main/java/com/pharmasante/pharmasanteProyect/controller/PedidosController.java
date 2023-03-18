@@ -3,6 +3,7 @@ package com.pharmasante.pharmasanteProyect.controller;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.ClienteSalidaDto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.DomicilioDto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.IDto.IAccionRol;
+import com.pharmasante.pharmasanteProyect.EntitiesDto.PedidosDto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.UsuarioEntradaDto;
 import com.pharmasante.pharmasanteProyect.models.Pedido;
 import com.pharmasante.pharmasanteProyect.models.Producto;
@@ -46,7 +47,6 @@ public class PedidosController {
         pedidosService.eliminarProductoCarrito(usuario.getIdServicio());
     }
 
-
     //Solicitud de pedidos
 
     @PostMapping("/recoger")
@@ -57,6 +57,11 @@ public class PedidosController {
     @PostMapping("/domicilio")
     public void enviarDomicilio(@Valid @RequestBody DomicilioDto domicilio, Errors errors){
         pedidosService.solicitudDomicilio(domicilio, errors);
+    }
+
+    @PostMapping("/listapedido")
+    public PedidosDto listaPedidos(@RequestBody UsuarioEntradaDto usuario){
+        return pedidosService.listaPedidos(usuario.getIdCliente());
     }
 
 }

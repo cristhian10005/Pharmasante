@@ -1,16 +1,19 @@
 window.onload =catalogoPrincipal;
 
 async function catalogoPrincipal() {
-
     let dato ={
         "idCliente": 1,
         "nombre": "Cristhian",
         "idServicio": 0,
-        "busqueda": "",
-        "contacto": ""    
+        "busqueda": ""
     };
 
-    setData(dato);
+    const urlParams = new URLSearchParams(window.location.search);
+    const data = urlParams.get('encript');
+    dato = JSON.parse(atob(data));
+
+    if(dato !=null){
+        setData(dato);
     let catalogo = document.querySelectorAll(".main-catalog");
     const request = await fetch('../../catalogo/cliente', {
         method: 'POST',
@@ -66,4 +69,7 @@ async function catalogoPrincipal() {
     catalogo[1].innerHTML = valorados;
     iniciarBotones(dato);
     accionProducto(dato);
+    }
+    
+   
 }

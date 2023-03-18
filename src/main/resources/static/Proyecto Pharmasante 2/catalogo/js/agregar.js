@@ -80,7 +80,7 @@ async function unidades(id, tipo){
    }else{
     let errorJSon = await request.json();
         Swal.fire({
-        icon: 'error',
+        icon: 'error',  
         title: errorJSon.message
         });
    }

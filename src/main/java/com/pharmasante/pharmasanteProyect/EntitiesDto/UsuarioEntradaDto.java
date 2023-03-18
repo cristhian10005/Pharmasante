@@ -12,6 +12,4 @@ public class UsuarioEntradaDto {
     private String nombre;
     private int idServicio;
     private String busqueda;
-    private String contacto;
-
 }

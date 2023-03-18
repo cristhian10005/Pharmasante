@@ -1,7 +1,7 @@
 package com.pharmasante.pharmasanteProyect.services.impl;
 
 import com.pharmasante.pharmasanteProyect.EntitiesDto.DomicilioDto;
-import com.pharmasante.pharmasanteProyect.EntitiesDto.UsuarioEntradaDto;
+import com.pharmasante.pharmasanteProyect.EntitiesDto.PedidosDto;
 import com.pharmasante.pharmasanteProyect.Excepciones.ProductException;
 import com.pharmasante.pharmasanteProyect.models.*;
 import com.pharmasante.pharmasanteProyect.repository.*;
@@ -38,6 +38,8 @@ public class PedidoServiceimpl implements IPedidosService {
     IDomicilioRepository domicilioRepository;
     @Autowired
     IValidaciones validaciones;
+    @Autowired
+    ITipoPedidoRepository tipoPedidoRepository;
 
 
     @Override
@@ -125,6 +127,7 @@ public class PedidoServiceimpl implements IPedidosService {
             throw new  ProductException("No se encuentra ningún prodcto agregado al carrito",
                     "Carrito sin productos");
         }
+
         EstadoPedido estado = estadoPedidoRepository.findById(2).get();
         pedido.setEstado(estado);
         RecogerEnTienda tienda = new RecogerEnTienda();
@@ -137,20 +140,38 @@ public class PedidoServiceimpl implements IPedidosService {
 
     @Override
     public void solicitudDomicilio(DomicilioDto domicilioP, Errors errors) {
-        Pedido pedido = pedidoRepository.findById(domicilioP.getIdServicio()).orElseThrow(()->{
-            throw new  ProductException("No se encuentra ningún pedido asociado",
+        Pedido pedido = pedidoRepository.findById(domicilioP.getIdServicio()).orElseThrow(() -> {
+            throw new ProductException("No se encuentra ningún pedido asociado",
                     "Pedido no encontrado");
         });
-        if(pedido.getDetalle().isEmpty()){
-            throw new  ProductException("No se encuentra ningún prodcto agregado al carrito",
+        if (pedido.getDetalle().isEmpty()) {
+            throw new ProductException("No se encuentra ningún prodcto agregado al carrito",
                     "Carrito sin productos");
         }
         validaciones.validacionDeErrores(errors);
-        EstadoPedido estado = estadoPedidoRepository.findById(2).get();
-        pedido.setEstado(estado);
+        pedido.setEstado(estadoPedidoRepository.findById(2).get());
+        pedido.setTipoPedido(tipoPedidoRepository.findById(2).get());
+
         Domicilio domicilio = new Domicilio(null, domicilioP.getDestinatario(),
                 domicilioP.getContacto(), domicilioP.getDireccion(), LocalTime.now(),
-                LocalTime.of(0,0,0),pedido);
+                LocalTime.of(0, 0, 0), pedido);
         domicilioRepository.save(domicilio);
+    }
+    @Override
+    public PedidosDto listaPedidos(int idUsuario){
+        Usuario usuario = usuarioService.buscarUsuario(idUsuario);
+        List<Pedido>pedidos = pedidoRepository.findByUsuario(usuario);
+        PedidosDto pedidosDto = new PedidosDto();
+        for (Pedido pedido : pedidos){
+            if(pedido.getTipoPedido().getId() ==1){
+                pedidosDto.getRecogerEnTiendas().add(recogerEnTiendaRepository.findByPedido(pedido).get(0));
+            } else if (pedido.getTipoPedido().getId() ==2) {
+                pedidosDto.getDomicilios().add(domicilioRepository.findByPedido(pedido).get(0));
+            }else {
+                pedidosDto.getPedidos().add(pedido);
+            }
+        }
+    return pedidosDto;
+
     }
 }
