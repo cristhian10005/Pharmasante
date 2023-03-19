@@ -153,7 +153,7 @@ public class PedidoServiceimpl implements IPedidosService {
         pedido.setTipoPedido(tipoPedidoRepository.findById(2).get());
 
         Domicilio domicilio = new Domicilio(null, domicilioP.getDestinatario(),
-                domicilioP.getContacto(), domicilioP.getDireccion(), LocalTime.now(),
+                domicilioP.getContacto(), domicilioP.getDireccion(), LocalDate.now(),
                 LocalTime.of(0, 0, 0), pedido);
         domicilioRepository.save(domicilio);
     }

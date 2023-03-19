@@ -34,7 +34,7 @@ async function validarRegistro(){
           });
           return;
     }
-    const request = await fetch('../../usuario/registro', {
+    const request = await fetch('usuario/registro', {
         method: 'POST',
         body: JSON.stringify(usuario),
         headers: {

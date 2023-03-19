@@ -1,24 +1,18 @@
-window.onload =filtroCategoria;
+
+window.onload =filtroNombre;
 
 
-async function filtroCategoria() {
+async function filtroNombre() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const data = urlParams.get('encript');
     let dato = JSON.parse(atob(data));
-    if(dato !=null){
-        
-        let enlaces = document.querySelectorAll(".enlace-sin");
-        let catalogo = document.querySelector(".categoria-filtro");
 
-       enlaces.forEach((e, i)=>{
-        if(e.classList.contains("foco-nav-a"))e.classList.remove("foco-nav-a");
-        e.addEventListener("click", ()=>{enlazar(i, dato)});
-       });
-       let focoA = parseInt(dato.idServicio) - 1;
-       if(focoA<=3) enlaces[focoA].classList.add("foco-nav-a");
-       
-        const request = await fetch('../../catalogo/filtrocl', {
+    if(dato !=null){
+        let catalogo = document.querySelector(".categoria-filtro");
+        
+
+        const request = await fetch('../catalogo/busquedacl', {
             method: 'POST',
             body: JSON.stringify(dato),
             headers: {
@@ -26,6 +20,7 @@ async function filtroCategoria() {
                 'Content-Type': 'application/json'
             }
         });
+
         const catalogoJson = await request.json();
         setData(dato);
         let contador= 0;
@@ -52,7 +47,6 @@ async function filtroCategoria() {
                                 <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                             </div>
                         </div>`
-                        contador++;
         }
         filtro +='</section>';
         catalogo.innerHTML = filtro;
@@ -60,4 +54,3 @@ async function filtroCategoria() {
     iniciarBotones(dato);
     accionProducto(dato);
 }
-

@@ -1,16 +1,24 @@
 
-window.onload =filtroNombre;
+window.onload =filtroCategoria;
 
 
-async function filtroNombre() {
+async function filtroCategoria() {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const dato = urlParams.get('nombre');
+    const dato = urlParams.get('categoria');
 
     if(dato !=null){
-        let catalogo = document.querySelector(".categoria-filtro");
         
-        const request = await fetch('../catalogo/busqueda/'+dato, {
+        let enlaces = document.querySelectorAll(".enlace-sin");
+        let catalogo = document.querySelector(".categoria-filtro");
+
+       enlaces.forEach((e)=>{
+        if(e.classList.contains("foco-nav-a"))e.classList.remove("foco-nav-a");
+       });
+       let focoA = parseInt(dato) - 1;
+       if(focoA<=3) enlaces[focoA].classList.add("foco-nav-a");
+
+        const request = await fetch('catalogo/filtro/'+dato, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -42,6 +50,7 @@ async function filtroNombre() {
                                 <button class="btn-catalog" onclick="agregar()">Agregar</button>
                             </div>
                         </div>`
+                        contador++;
         }
         filtro +='</section>';
         catalogo.innerHTML = filtro;

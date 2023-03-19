@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
@@ -28,8 +29,8 @@ public class Domicilio{
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name= "hora_envio")
-    private LocalTime horaEnvio;
+    @Column(name= "fecha_llegada")
+    private LocalDate horaEnvio;
 
     @Column(name= "hora_llegada")
     private LocalTime hora_llegada;

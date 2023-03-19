@@ -1,23 +1,9 @@
 window.onload =catalogoPrincipal;
 
 async function catalogoPrincipal() {
-    let dato ={
-        "idCliente": 1,
-        "nombre": "Cristhian",
-        "idServicio": 0,
-        "busqueda": ""
-    };
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const data = urlParams.get('encript');
-    dato = JSON.parse(atob(data));
-
-    if(dato !=null){
-        setData(dato);
     let catalogo = document.querySelectorAll(".main-catalog");
-    const request = await fetch('../../catalogo/cliente', {
-        method: 'POST',
-        body: JSON.stringify(dato),
+    const request = await fetch('catalogo/index', {
+        method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -26,9 +12,9 @@ async function catalogoPrincipal() {
     const catalogoJson = await request.json();
     let vendidos = '';
     let valorados = '';
-    for (let produc of catalogoJson.catalogoIndex.masVendidos) {
+    for (let produc of catalogoJson.masVendidos) {
         vendidos += `	<div class="main-catalog-section1">
-                            <div><img src="../${produc.imagen}" alt=""></div>
+                            <div><img src="${produc.imagen}" alt=""></div>
                             <ul class="main-catalog-section1-item">
                                 <li><p>${produc.nombre}</p></li>
                                 <li><p>$${produc.precioVenta}</p></li>
@@ -45,10 +31,9 @@ async function catalogoPrincipal() {
                          </div>
                         </div>`
     }
-    for (let produc of catalogoJson.catalogoIndex.mejorValorados) {
-        dato.idServicio =produc.idProducto;
+    for (let produc of catalogoJson.mejorValorados) {
         valorados += `	<div class="main-catalog-section1">
-                            <div><img src="../${produc.imagen}" alt=""></div>
+                            <div><img src="${produc.imagen}" alt=""></div>
                             <ul class="main-catalog-section1-item">
                                 <li><p>${produc.nombre}</p></li>
                                 <li><p>$${produc.precioVenta}</p></li>
@@ -67,9 +52,4 @@ async function catalogoPrincipal() {
     }
     catalogo[0].innerHTML = vendidos;
     catalogo[1].innerHTML = valorados;
-    iniciarBotones(dato);
-    accionProducto(dato);
-    }
-    
-   
 }

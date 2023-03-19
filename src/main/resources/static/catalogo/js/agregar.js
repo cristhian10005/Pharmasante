@@ -6,7 +6,7 @@ function setData(dato){
 async function agregar(id){
     dataBtn.idServicio = id;
    try{
-    const request = await fetch('../../pedidos/carritoadd', {
+    const request = await fetch('../pedidos/carritoadd', {
         method: 'POST',
         body: JSON.stringify(dataBtn),
         headers: {
@@ -66,7 +66,7 @@ function accionProducto(dato){
 async function unidades(id, tipo){
     dataBtn.idServicio = id;
     dataBtn.busqueda =tipo;
-    const request = await fetch('../../pedidos/carritound', {
+    const request = await fetch('../pedidos/carritound', {
         method: 'PUT',
         body: JSON.stringify(dataBtn),
         headers: {
@@ -99,7 +99,7 @@ async function eliminarUnd(id){
       }).then((result) => {
         if (result.isConfirmed) {
             condfirmado = true;
-               fetch('../../pedidos/carritodel', {
+               fetch('../pedidos/carritodel', {
                 method: 'DELETE',
                 body: JSON.stringify(dataBtn),
                 headers: {

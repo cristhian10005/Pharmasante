@@ -22,7 +22,7 @@
                     "contacto": contacto.value,
                     "direccion": direccion.value
                 };
-                const request = await fetch('../../pedidos/domicilio', {
+                const request = await fetch('../pedidos/domicilio', {
                     method: 'POST',
                     body: JSON.stringify(domicilio),
                     headers: {
@@ -48,7 +48,7 @@
 
         }else if(elementoActivo2) {
 
-            const request = await fetch('../../pedidos/recoger', {
+            const request = await fetch('../pedidos/recoger', {
                 method: 'POST',
                 body: JSON.stringify(dato),
                 headers: {

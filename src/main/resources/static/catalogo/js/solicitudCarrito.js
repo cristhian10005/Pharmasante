@@ -9,7 +9,7 @@ async function listaCarrito() {
         let talbaShop = document.getElementById("tabla-shop");
         let total = document.querySelector(".total");
 
-        const request = await fetch('../../pedidos/carritolist', {
+        const request = await fetch('../pedidos/carritolist', {
             method: 'POST',
             body: JSON.stringify(dato),
             headers: {
