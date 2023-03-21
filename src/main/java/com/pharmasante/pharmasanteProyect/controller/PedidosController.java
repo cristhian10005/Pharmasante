@@ -1,15 +1,9 @@
 package com.pharmasante.pharmasanteProyect.controller;
 
-import com.pharmasante.pharmasanteProyect.EntitiesDto.ClienteSalidaDto;
-import com.pharmasante.pharmasanteProyect.EntitiesDto.DomicilioDto;
+import com.pharmasante.pharmasanteProyect.EntitiesDto.*;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.IDto.IAccionRol;
-import com.pharmasante.pharmasanteProyect.EntitiesDto.PedidosDto;
-import com.pharmasante.pharmasanteProyect.EntitiesDto.UsuarioEntradaDto;
-import com.pharmasante.pharmasanteProyect.models.Pedido;
 import com.pharmasante.pharmasanteProyect.models.Producto;
-import com.pharmasante.pharmasanteProyect.models.Usuario;
 import com.pharmasante.pharmasanteProyect.services.IPedidosService;
-import com.pharmasante.pharmasanteProyect.services.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.Errors;
@@ -17,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -62,6 +57,15 @@ public class PedidosController {
     @PostMapping("/listapedido")
     public PedidosDto listaPedidos(@RequestBody UsuarioEntradaDto usuario){
         return pedidosService.listaPedidos(usuario.getIdCliente());
+    }
+    @DeleteMapping("/eliminarPedido")
+    public void elimininarPedido(@RequestBody UsuarioEntradaDto usuario){
+        pedidosService.eliminarPedido(usuario.getIdServicio());
+    }
+
+    @PostMapping ("/calificar")
+    public void calificarProducto(@RequestBody CalificacionDto calificacion){
+        pedidosService.calificar(calificacion);
     }
 
 }

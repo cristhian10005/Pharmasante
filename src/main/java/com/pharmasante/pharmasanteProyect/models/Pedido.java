@@ -18,28 +18,28 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")
-    protected Integer id;
+    private Integer id;
 
     @Column(name = "precio_pedido")
-    protected Integer precioPedido;
+    private Integer precioPedido;
 
     @ManyToOne
     @JoinColumn(name = "id_estado_pedido ")
-    protected EstadoPedido estado;
+    private EstadoPedido estado;
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_pedido ")
-    protected TipoPedido tipoPedido;
+    private TipoPedido tipoPedido;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_solicitud")
-    protected LocalDate fechaSolicitud;
+    private LocalDate fechaSolicitud;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    protected Usuario usuario;
+    private Usuario usuario;
 
     @OneToMany(mappedBy ="pedido")
-    protected List<DetallePedido>detalle;
+    private List<DetallePedido>detalle;
 
 }

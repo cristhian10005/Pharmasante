@@ -34,13 +34,15 @@ async function catalogoPrincipal() {
                                 <li><p>$${produc.precioVenta}</p></li>
                             </ul>
                             <div class="estrellas">
-                                <div>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                </div>
+                            <div>`;
+                            for(let i =0; i<5;i++){
+                                if(i<parseInt(produc.calificacion)){
+                                   vendidos += `<i class="fa-solid fa-star active"></i>`;
+                                }else{
+                                    vendidos += `<i class="fa-solid fa-star disable"></i>`;    
+                                }
+                            }    
+                          vendidos+=`</div>
                             <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                          </div>
                         </div>`
@@ -54,13 +56,15 @@ async function catalogoPrincipal() {
                                 <li><p>$${produc.precioVenta}</p></li>
                             </ul>
                             <div class="estrellas">
-                                <div>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                    <a href=""><i class="fa-solid fa-star"></i></a>
-                                </div>
+                            <div>`;
+                            for(let i =0; i<5;i++){
+                                if(i<parseInt(produc.calificacion)){
+                                   valorados += `<i class="fa-solid fa-star active"></i>`;
+                                }else{
+                                    valorados += `<i class="fa-solid fa-star disable"></i>`;    
+                                }
+                            }    
+                          valorados+=`</div>
                             <button class="btn-catalog" onclick="agregar(${produc.idProducto})">Agregar</button>
                          </div>
                         </div>`

@@ -89,7 +89,7 @@ async function eliminarUnd(id){
     dataBtn.idServicio = id;
     let condfirmado = false;
     await Swal.fire({
-        title: 'Seguro',
+        title: '¿Seguro?',
         text: "Desea eliminar el producto",
         icon: 'warning',
         showCancelButton: true,
@@ -118,4 +118,42 @@ async function eliminarUnd(id){
             );
             location. reload();
       }
+}
+
+
+
+async function enviarDatoEliminarPedido(idPedido){
+    dataBtn.idServicio= idPedido;
+    let condfirmado = false;
+    await Swal.fire({
+        title: '¿Seguro?',
+        text: "Desea eliminar el pedido",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            condfirmado = true;
+               fetch('../pedidos/eliminarPedido', {
+                method: 'DELETE',
+                body: JSON.stringify(dataBtn),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
+      })
+
+      if(condfirmado){
+        await Swal.fire(
+                'Eliminado',
+                'Pedido eliminado con exito',
+                'success'
+            );
+            location. reload();
+      }
+
 }

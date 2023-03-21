@@ -87,7 +87,10 @@ h3{
 	justify-content: center;
 	gap: 2px;
 }
-.main-catalog-section1 i{
+.disable{
+	color: #63634f;
+}
+.active{
 	color: #d3c500;
 	font-size: 16px;
 }

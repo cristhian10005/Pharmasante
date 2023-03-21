@@ -32,13 +32,15 @@ async function filtroNombre() {
                                 <li><p>$${produc.precioVenta}</p></li>
                             </ul>
                             <div class="estrellas">
-                                    <div>
-                                        <a href=""><i class="fa-solid fa-star"></i></a>
-                                        <a href=""><i class="fa-solid fa-star"></i></a>
-                                        <a href=""><i class="fa-solid fa-star"></i></a>
-                                        <a href=""><i class="fa-solid fa-star"></i></a>
-                                        <a href=""><i class="fa-solid fa-star"></i></a>
-                                    </div>
+                                    <div>`;
+                                    for(let i =0; i<5;i++){
+                                        if(i<parseInt(produc.calificacion)){
+                                           filtro += `<i class="fa-solid fa-star active"></i>`;
+                                        }else{
+                                            filtro += `<i class="fa-solid fa-star disable"></i>`;    
+                                        }
+                                    }    
+                                  filtro+=`</div>
                                 <button class="btn-catalog" onclick="agregar()">Agregar</button>
                             </div>
                         </div>`

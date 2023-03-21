@@ -70,11 +70,11 @@
 
 .icon-order a {
 	font-size: 18px;
-	color: rgb(189, 7, 40);;
+	color: rgb(189, 7, 40);
 }
 
 .icon-order a:visted{
-	color: rgb(189, 7, 40);;
+	color: rgb(189, 7, 40);
 }
 
 .estado{
@@ -87,37 +87,10 @@
 	border-radius: 10px;
 }
 
-.historial{
-	color: #205192;
-	margin-bottom: 15px;
-}
-
-#tabla-h-p{
-	background: #ffffff;
-	box-shadow: 1px 1px 2px 1px #bbb;
-	position: absolute;
-	height: 400px;
-	overflow-x: auto;
-	width: 90%;
-	display: none;
-}
-
-#tabla-h-p table{
-	width: 100%;
-}
-
-#tabla-h-p th, td{
-	padding: 7px;
-	text-align: left;
-}
-#tabla-h-p:target{
-	display: block;
-}
-#tabla-h-p a {
-	color:#B41F1F;
+td a{
 	font-size: 18px;
+	color: rgb(189, 7, 40) !important;
 }
-
 
 
 /*Calificación del producto*/
@@ -161,8 +134,12 @@
 }
 
 
-.qualify-section a{	
-	color: #666;
+.disable{
+	color: #63634f;
+}
+.active{
+	color: #d3c500;
+	font-size: 16px;
 }
 
 .qualify-section a:hover{

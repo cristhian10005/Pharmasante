@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/styleOrder.css">
 		<link rel="stylesheet" href="css/stylePanel.css">
 		<link rel="icon" type="image/png" href="../img/logo.png">
+		<link rel="stylesheet" href="../vendedor/css/styleVendor.css">
 	</head>
 	<body>
 		
@@ -48,172 +49,58 @@
 			<li class="btn-p"><a href="#" class="btn-a"> Mis productos </a></li>
 		</ul>
 
-		<!-- Estado de pedido -->
+		<!-- Tabla recoger en tienda -->
 
-		<div class="section-order order-class" id="order">
-			<div class="section-order-container">
-				<p class="section-order-container-item">Id de pedido: <span>0002</span></p>
-				<p class="section-order-container-item">Tipo de entrega: <span>Domicilio</span></p>
-				<p class="section-order-container-item">Fecha de solicitud del pedido: <span>17-03-2022</span></p>
-				<!-- <p class="section-order-container-item">Hora de envio: <span>15:55</span></p> -->
-				<!-- <p class="section-order-container-item">Fecha limite de recogida: <span>18-03-2022</span></p> -->
-				<p class="section-order-container-item">Valor total del pedido: <span>70000</span></p>
-				<div class="section-order-container-item icon-order">	
-					<a href="#"><i class="fa-regular fa-circle-xmark"></i> Eliminar</a>
-				</div>
-				<p class="estado">Estado: <span>Solicitado</span></p>
-			</div>
-			<a href="#tabla-h-p" class="historial">Ver pedidos anteriores</a>
-		</div>
-
-		<!-- Historial de pedido -->
-
-		<div id="tabla-h-p">
-			<a href="#"><i class="fa-regular fa-circle-xmark"></i></i></a>
-			<table>
+		<section class="table-container order-class">
+			<table class="tabla">
 				<thead>
 					<tr>
 						<th>Id de pedido</th>
-						<th>Tipo de entrega</th>
 						<th>Fecha solicitud</th>
 						<th>Valor</th>
 						<th>Estado</th>
+						<th>Fecha límite</th>
+						<th>Eliminar</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tabla-pedido">
+					
+					
+					</tbody>
+				</table>
+		</section>
+
+		<!--  Tabla domicilio -->
+
+		<section class="table-container section-off order-class">
+			<table class="tabla">
+				<thead>
 					<tr>
-						<td>0002</td>
-						<td>Domicilio</td>
-						<td>20-05-2022</td>
-						<td>35000</td>
-						<td>Recibido</td>
+						<th>Id de pedido</th>
+						<th>Fecha solicitud</th>
+						<th>Valor</th>
+						<th>Estado</th>
+						<th>Fecha y hora de entrega</th>
+						<th>Eliminar</th>
 					</tr>
-					<tr>
-						<td>0003</td>
-						<td>Domicilio</td>
-						<td>10-06-2022</td>
-						<td>24500</td>
-						<td>Rechazado</td>
-					</tr>
-					<tr>
-						<td>0004</td>
-						<td>Domicilio</td>
-						<td>05-10-2022</td>
-						<td>42600</td>
-						<td>Recibido</td>
-					</tr>
-					<tr>
-						<td>0005</td>
-						<td>Domicilio</td>
-						<td>25-11-2022</td>
-						<td>80000</td>
-						<td>No recibido</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+				</thead>
+				<tbody id="tabla-pedido2">
+					
+					</tbody>
+				</table>
+		</section>
 
 		<!-- Productos comprados -->
 
 		<div class="section-off order-class" id="id-qualify">
 			
-			<div class="qualify">
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/producto1.png" alt=""></li>
-					<li>
-						<p>Talco mexsana lady 300 Gramos + 85 Gramos</p>
-						<p>$ 23000</p>
-					</li>
-					<li>
-						<p>Calificar</p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/producto14.png" alt=""></li>
-					<li><p>Jabón Protex Pro-Hidrata olive 90 Gramos</p></li>
-					<li><p>$ 6000</p></li>
-					<li>
-						<p>Calificar</p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/producto15.png" alt=""></li>
-					<li><p>Jabón ProtexMen sport 110 Gramos</p></li>
-					<li><p>$ 9000</p></li>
-					<li>
-						<p>Calificar </p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="qualify">
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/producto4.png" alt=""></li>
-					<li><p>Crema dental Sensodyne Repara y protege 100 Gramos</p></li>
-					<li><p>$ 17000</p></li>
-					<li>
-						<p>Calificar </p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/Johson/producto6.png" alt=""></li>
-					<li><p>Listerine Cuidado total zero 500ML</p></li>
-					<li><p>$ 10000</p></li>
-					<li>
-						<p>Calificar </p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-
-				<ul class="qualify-section">
-					<li><img src="../img/productos/producto13.png" alt=""></li>
-					<li><p>Bloqueador Tanga FPS 150ML crema</p></li>
-					<li><p>$ 44300</p></li>
-					<li>
-						<p>Calificar </p>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-						<a href="#"><i class="fa-solid fa-star"></i></a>
-					</li>
-				</ul>
-			</div>
-
 		</div>
 
 	</section>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="js/panel.js"></script>
 	<script src="js/order.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/agregar.js"></script>
+	<script src="js/calificar.js"></script>
 </body>
 </html>

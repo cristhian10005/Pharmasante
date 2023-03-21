@@ -82,7 +82,5 @@ public class PedidoRepositoryTest {
         recogerEnTienda.setId(pedido.getId());
         RecogerEnTienda r= recogenrEnTiendaRepository.save(recogerEnTienda);
         Assertions.assertThat(r).isNotNull();
-
-
     }
 }

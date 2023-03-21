@@ -30,10 +30,10 @@ public class Domicilio{
     private String direccion;
 
     @Column(name= "fecha_llegada")
-    private LocalDate horaEnvio;
+    private LocalDate fehcaLlegada;
 
     @Column(name= "hora_llegada")
-    private LocalTime hora_llegada;
+    private LocalTime horaLlegada;
 
     @ManyToOne
     @JoinColumn(name = "id_pedido")
