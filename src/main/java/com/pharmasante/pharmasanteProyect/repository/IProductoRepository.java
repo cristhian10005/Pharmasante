@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IProductoRepository extends JpaRepository<Producto, Integer> {
     @Query(
-            value = "SELECT * FROM Producto ORDER BY unidades_vendidas DESC LIMIT 5",
+            value = "SELECT * FROM producto ORDER BY unidades_vendidas DESC LIMIT 5",
             nativeQuery = true
     )
      List<Producto> catalogoVendidos();
