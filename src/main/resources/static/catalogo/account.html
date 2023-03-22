@@ -48,21 +48,13 @@
 				<div class="section-account-1">
 					<h2>Información personal</h2>
 					<div class="section-date-1">
-						<p>Nombre: <span>Cristhian Mora</span></p>
-						<p>Número de identificación: <span>96622478</span></p>
-						<p>Número de contacto: <span>3005499229</span></p>
-						<p>Correo: <span>cristhian1005@gmail.com</span></p>
-						<p>Fecha de nacimiento: <span>26-08-1999</span></p>
-						<p>Dirección:<span>cra2 # 162-34</span></p>
-						<p>Fecha de nacimiento: <span>26-08-1999</span></p>
-						<p>Reportes negativos: <span>3</span></p>
-						<a href="#form-section-date" class="btn-pass">Actualizar contraseña</a>
+						
 					</div>
-					<form action="#" id="form-section-date">
-						<input type="password" placeholder="Ingrese su anterior contraseña">
-						<input type="password" placeholder="Ingrese su nueva contraseña">
-						<input type="password" placeholder="confirmar contraseña">
-						<input type="submit" value="actualizar">
+					<form id="form-section-date">
+						<input type="password" placeholder="Ingrese su anterior contraseña" id="passold">
+						<input type="password" placeholder="Ingrese su nueva contraseña" id="pass1">
+						<input type="password" placeholder="confirmar contraseña" id="pass2">
+						<button id="update">Actualizar</button>
 					</form>
 				</div>
 		</section>
@@ -71,6 +63,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="js/panel.js"></script>
 		<script src="../js/menu.js"></script>
-		<script src="../js/alertas.js"></script>
+		<script src="js/account.js"></script>
 	</body>
 </html>

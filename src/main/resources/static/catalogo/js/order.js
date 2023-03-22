@@ -1,4 +1,10 @@
 window.onload =listaPedido;
+
+var calificacionProducto ={
+    "calificacion": 0,
+    "idProducto": 0,
+    "idUsuario": 0
+}
 let btnPedido = document.querySelectorAll(".btn-p");
 
 let order = document.querySelectorAll(".order-class");
@@ -23,6 +29,7 @@ async function listaPedido() {
     let dato = JSON.parse(atob(data));
     if(dato !=null){
         setData(dato);
+        calificacionProducto.idUsuario = dato.idCliente;
         let tablaPedido = document.getElementById("tabla-pedido");
 		let tablaPedido2 = document.getElementById("tabla-pedido2");
         let tablaCalificados = document.getElementById("id-qualify");
@@ -82,12 +89,16 @@ async function listaPedido() {
             </li>
             <li>
                 <p>Calificar</p>`;
+                let puntaje = 1;
                 for(let i =0; i<5;i++){
                     if(i<parseInt(produc.calificacion)){
-                       calificados += `<a href="#"><i class="fa-solid fa-star active"></i></a>`;
+                       calificados += `<a href="#" onclick = "calificarProducto(${produc.idProducto},${puntaje})">
+                       <i class="fa-solid fa-star active"></i></a>`;
                     }else{
-                        calificados += `<a href="#"><i class="fa-solid fa-star disable"></i></a>`;    
+                        calificados += `<a href="#" onclick = "calificarProducto(${produc.idProducto},${puntaje})">
+                        <i class="fa-solid fa-star disable"></i></a>`;    
                     }
+                    puntaje++;
                 }    
             calificados += `</li>
         </ul>`;
@@ -155,5 +166,27 @@ async function eliminarPedido(idPedido){
             );
             location. reload();
       }
+}
+
+async function calificarProducto(idProducto, calificacion){
+    calificacionProducto.idProducto = idProducto;
+    calificacionProducto.calificacion = calificacion;
+
+    const request = await fetch('../pedidos/calificar', {
+        method: 'POST',
+        body: JSON.stringify(calificacionProducto),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+
+    await Swal.fire(
+        'Calificado',
+        'Producto calificado con exito',
+        'success'
+    );
+    location. reload();
+
 }
 

@@ -2,16 +2,12 @@ package com.pharmasante.pharmasanteProyect.controller;
 
 import com.pharmasante.pharmasanteProyect.EntitiesDto.*;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.IDto.IAccionRol;
-import com.pharmasante.pharmasanteProyect.models.Producto;
 import com.pharmasante.pharmasanteProyect.services.IPedidosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/pedidos")

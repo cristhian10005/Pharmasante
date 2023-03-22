@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface IPedidoRepository extends JpaRepository<Pedido, Integer> {
     List<Pedido> findByUsuarioAndEstadoIsNotOrderByIdDesc(Usuario usuario, EstadoPedido estado);
+    List<Pedido> findByEstadoIsNotOrderByIdDesc(EstadoPedido estado);
 
     List<Pedido> findByUsuarioAndEstado(Usuario usuario, EstadoPedido estadoPedido);
 }

@@ -68,7 +68,7 @@
 #form-section-date input:focus{
 	outline: none;
 }
-#form-section-date input[type=submit]{
+#form-section-date button{
 	background: #B41F1F;
 	color: #fff;
 	border: none;
