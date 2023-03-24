@@ -15,6 +15,9 @@ h2 {
     width: 95% !important;
     margin-left: 5%;
 }
+.contenedor-tablas{
+    position: relative;
+}
 .table-container{
     margin:25px 5%;
     overflow-x: auto;
@@ -106,6 +109,11 @@ h2 {
 .tabla tfoot button:hover{
     cursor: pointer;
 }
+
+.desactivar-t{
+   display: none !important;
+}
+
 
 
 @media (max-width: 750px){

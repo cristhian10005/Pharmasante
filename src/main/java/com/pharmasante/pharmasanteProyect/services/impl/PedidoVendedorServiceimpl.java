@@ -74,10 +74,6 @@ public class PedidoVendedorServiceimpl implements IPedidosVendedorService {
     public Set<Producto> listaCalificados(Usuario usuario){
         EstadoPedido estado = estadoPedidoRepository.findById(7).get();
         List<Pedido>pedidos =pedidoRepository.findByUsuarioAndEstado(usuario, estado);
-        if (pedidos.isEmpty()){
-            throw new ProductException("EL usuario no dispone de pedidos comprados",
-                    "pedidos no encontrados");
-        }
         HashSet<Producto>productos = new HashSet<>();
         for (Pedido pedido: pedidos){
            for (DetallePedido detalle: pedido.getDetalle()){

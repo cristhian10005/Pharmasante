@@ -24,7 +24,7 @@ async function consultarCuenta() {
         <p>Número de identificación: <span>${usuario.usuario.identificacion}</span></p>
         <p>Número de contacto: <span>${usuario.usuario.ncontacto}</span></p>
         <p>Correo: <span>${usuario.usuario.correo}</span></p>   
-        <p>Reportes negativos: <span>${usuario.usuario.reportes}</span></p>
+        <p>Reportes negativos: <span>${usuario.reportes}</span></p>
         <a href="#form-section-date" class="btn-pass">Actualizar contraseña</a>`;
         datosUsuario.innerHTML = infoUsuario;
         id = usuario.usuario.id;

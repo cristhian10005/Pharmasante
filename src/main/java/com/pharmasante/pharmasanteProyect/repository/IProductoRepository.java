@@ -16,7 +16,7 @@ public interface IProductoRepository extends JpaRepository<Producto, Integer> {
      List<Producto> catalogoVendidos();
 
     @Query(
-            value = "SELECT * FROM Producto ORDER BY calificacion DESC LIMIT 5",
+            value = "SELECT * FROM producto ORDER BY calificacion DESC LIMIT 5",
             nativeQuery = true
     )
      List<Producto> catalogoCalificados();

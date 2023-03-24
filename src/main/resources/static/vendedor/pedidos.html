@@ -31,13 +31,17 @@
 		<ul class="menu-panel-enlaces">
 			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
 				</i> <span class="ocultar">Ocultar</span></a></li>
-			<li><a href="pagosDirectos.html"><i class="fa-solid fa-pills"></i> 
+
+			<li><a href="#" class="btn-cargar"><i class="fa-solid fa-pills"></i> 
 				<span class="ocultar">Productos</span></a></li>
-			<li><a href="caja.html"><i class="fa-solid fa-cash-register"></i> 
+
+			<li><a href="#" class="btn-cargar"><i class="fa-solid fa-cash-register"></i> 
 				<span class="ocultar">Caja</span></a></li>
-			<li class="foco"><a href="#"><i class="fa-solid  fa-list-ol"></i> 
+
+			<li class="foco"><a href="#" class="btn-cargar"><i class="fa-solid  fa-list-ol"></i> 
 				<span class="ocultar">Pedidos</span></a></li>
-			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
+
+			<li><a href="#" class="btn-cargar"><i class="fa-regular fa-circle-user"></i> 
 				<span class="ocultar">Cuenta</span></a></li>
 		</ul>
 	</nav>
@@ -48,12 +52,12 @@
 
 	<h2>Pedidos solicitados</h2>
 
+<div class="contenedor-tablas">
 	<section class="table-container">
-		<!-- <div>
-			<div>
-				<input type="text"> <button>Buscar</button>
-			</div>
-		</div> -->
+		<div class="enlace-lista desactivar-t">
+			<a href="pedidos.html" class="enlace-pto-agr"><i class="fa-solid fa-arrow-left"></i> 
+				Volver al listado de pedidos</a>
+		</div>
 		<table class="tabla">
 			<thead>
 				<tr>
@@ -67,14 +71,55 @@
 			</thead>
 			<tbody id="tabla-pedidos">
 				
+			</tbody>
+		</table>
+		<table class="tabla desactivar-ta">
+			<thead>
+				<tr>
+					<th>Código producto</th>
+					<th>Descripsión</th>
+					<th>Precio</th>
+					<th>cantidad</th>
+					<th>Subtotal</th>
+				</tr>
+			</thead>
+			<tbody id="tabla-detalle">
+				
 				</tbody>
+				<tfoot>
+					<tr id="tabla-foot">
+						<td>Código 003</td>
+						<td>Solicitante: María Cordoba</td>
+						<td>Recoger en tienda</td>                                                                                                                                             
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Total:</td>
+						<td>$25700</td>
+						<td>Asignar estado </td>
+						<td>
+							<select name="" id="">
+								<option value="">Alistado</option>
+								<option value="">Enviado</option>
+								<option value="">Rechazado</option>
+								<option value="">Cancelado</option>
+								<option value="">Entregado</option>
+							</select>
+						</td>
+						<td>
+							<button>Actualizar</button>
+						</td>
+					</tr>
+				  </tfoot>
 			</table>
 	</section>
 
 
+</div>
 	<script src="../catalogo/js/panel.js"></script>
 	<script src="js/pedidos.js"></script>
-	<!-- Scripts enlaces -->
+	<script src="js/enlacePanel.js"></script>
 </body>
 
 </html>

@@ -65,8 +65,7 @@ public class UsuarioServiceimpl implements IUsuarioService {
         validaciones.validacionDeErrores(errors);
         Usuario usuario = buscarUsuario(passwordDto.getIdUsuario());
         if(!usuario.getPassword().equals(passwordDto.getPasswordOld())){
-            throw new ProductException("Contraseña incorrecta" +usuario.getPassword()+
-                    " "+passwordDto.getPasswordOld(),"");
+            throw new ProductException("Contraseña incorrecta","");
         }
         usuario.setPassword(passwordDto.getPassword());
         usuarioRepository.save(usuario);
