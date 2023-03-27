@@ -1,7 +1,10 @@
 package com.pharmasante.pharmasanteProyect.controller;
 
+import com.pharmasante.pharmasanteProyect.EntitiesDto.CategoriasProveedorDto;
 import com.pharmasante.pharmasanteProyect.models.Producto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.ProductoDTO;
+import com.pharmasante.pharmasanteProyect.repository.ICategoriaRepository;
+import com.pharmasante.pharmasanteProyect.repository.IProveedorRepository;
 import com.pharmasante.pharmasanteProyect.services.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,17 +20,28 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private IProductoService iproductoService;
+    @Autowired
+    private ICategoriaRepository categoriaRepository;
+    @Autowired
+    private IProveedorRepository proveedorRepository;
 
 
-    @GetMapping
+    @GetMapping("/productos")
     public List<Producto> productosPrincipales(){
         return iproductoService.listaProductos();
     }
 
-    @PostMapping
-    public ResponseEntity<Producto> productoGuardado(@Valid @RequestBody ProductoDTO pto, Errors errors)
+
+    @GetMapping("/proveedores")
+    public CategoriasProveedorDto listasSeleccion(){
+        return new CategoriasProveedorDto(categoriaRepository.findAll(),proveedorRepository.findAll());
+    }
+
+
+    @PostMapping("/producto")
+    public void productoGuardado(@Valid @RequestBody ProductoDTO pto, Errors errors)
     {
-        return new ResponseEntity<>(iproductoService.guardarProducto(pto, errors), HttpStatus.CREATED);
+        iproductoService.guardarProducto(pto, errors);
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

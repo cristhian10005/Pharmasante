@@ -53,8 +53,8 @@ public class ProductoTest {
                 new Proveedor(), "src/img", 500,700,
                 0,0,0);
 
-        productoDTO = new ProductoDTO("Loratadina",new Categoria(1,"Cosmeticos"),
-                new Proveedor(1,"La sante","555","correo1"),
+        productoDTO = new ProductoDTO(null,"Loratadina",1,
+               2,
                 "imagen,png", 500, 700, "Bytes imagen");
     }
 

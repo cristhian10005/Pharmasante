@@ -1,16 +1,10 @@
 window.onload =catalogoPrincipal;
 
 async function catalogoPrincipal() {
-    let dato ={
-        "idCliente": 1,
-        "nombre": "Cristhian",
-        "idServicio": 0,
-        "busqueda": ""
-    };
-
-    /*const urlParams = new URLSearchParams(window.location.search);
+   
+    const urlParams = new URLSearchParams(window.location.search);
     const data = urlParams.get('encript');
-    dato = JSON.parse(atob(data));*/
+    dato = JSON.parse(atob(data));
 
     if(dato !=null){
         setData(dato);

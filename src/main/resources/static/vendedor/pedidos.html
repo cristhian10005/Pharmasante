@@ -32,9 +32,6 @@
 			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
 				</i> <span class="ocultar">Ocultar</span></a></li>
 
-			<li><a href="#" class="btn-cargar"><i class="fa-solid fa-pills"></i> 
-				<span class="ocultar">Productos</span></a></li>
-
 			<li><a href="#" class="btn-cargar"><i class="fa-solid fa-cash-register"></i> 
 				<span class="ocultar">Caja</span></a></li>
 
@@ -55,7 +52,7 @@
 <div class="contenedor-tablas">
 	<section class="table-container">
 		<div class="enlace-lista desactivar-t">
-			<a href="pedidos.html" class="enlace-pto-agr"><i class="fa-solid fa-arrow-left"></i> 
+			<a href="#" class="enlace-pto-agr" onclick="location.reload()"><i class="fa-solid fa-arrow-left"></i> 
 				Volver al listado de pedidos</a>
 		</div>
 		<table class="tabla">
@@ -73,7 +70,7 @@
 				
 			</tbody>
 		</table>
-		<table class="tabla desactivar-ta">
+		<table class="tabla desactivar-t">
 			<thead>
 				<tr>
 					<th>Código producto</th>
@@ -86,37 +83,16 @@
 			<tbody id="tabla-detalle">
 				
 				</tbody>
-				<tfoot>
-					<tr id="tabla-foot">
-						<td>Código 003</td>
-						<td>Solicitante: María Cordoba</td>
-						<td>Recoger en tienda</td>                                                                                                                                             
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Total:</td>
-						<td>$25700</td>
-						<td>Asignar estado </td>
-						<td>
-							<select name="" id="">
-								<option value="">Alistado</option>
-								<option value="">Enviado</option>
-								<option value="">Rechazado</option>
-								<option value="">Cancelado</option>
-								<option value="">Entregado</option>
-							</select>
-						</td>
-						<td>
-							<button>Actualizar</button>
-						</td>
-					</tr>
+				<tfoot id="tabla-foot">
+				
+					
 				  </tfoot>
 			</table>
 	</section>
-
-
 </div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../catalogo/js/panel.js"></script>
 	<script src="js/pedidos.js"></script>
 	<script src="js/enlacePanel.js"></script>

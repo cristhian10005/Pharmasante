@@ -48,8 +48,8 @@ public class ProductCrudTest {
                 new Proveedor(), "src/img", 500,700,
                 0,0,0);
 
-        productoDTO = new ProductoDTO("Loratadina",new Categoria(1,"Cosmeticos"),
-                new Proveedor(1,"La sante","555","correo1"),
+        productoDTO = new ProductoDTO(null,"Loratadina",2,
+           2,
                 "imagen,png", 500, 700, "Bytes imagen");
     }
 
@@ -74,7 +74,7 @@ public class ProductCrudTest {
     void testActualizarProducto(){
         BDDMockito.given(iproductoRepository.save(Mockito.any(Producto.class)))
                 .willAnswer(p-> p.getArgument(0));
-        ProductoDTO productoDTO2 = new ProductoDTO("Loratadina",null, null,
+        ProductoDTO productoDTO2 = new ProductoDTO(null,"Loratadina",1, 1,
                 "imagen,png", 500, 700, "Bytes imagen");
 
         Producto productoActualizado = productoServicesimpl.actualizarProducto(productoDTO2, errors);

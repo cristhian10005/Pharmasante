@@ -53,8 +53,9 @@ async function listaPedido() {
 				<td>${produc.pedido.id}</td>
 				<td>${produc.pedido.fechaSolicitud}</td>
 				<td>$ ${produc.pedido.precioPedido}</td>
-				<td>${produc.pedido.estado.descripcion}</td>
-				<td>${produc.fecha_limite}</td>`;
+				<td>${produc.pedido.estado.descripcion}</td>`;
+              carritolist +=  produc.pedido.estado.id == 2? `<td>Por asignar</td>`:`<td>${produc.fecha_limite}</td>`;
+                
             if(produc.pedido.estado.id == 2 ||produc.pedido.estado.id == 3 || produc.pedido.estado.id == 4){
                 carritolist += `<td><a href="#" onclick="enviarDatoEliminarPedido(${produc.pedido.id})">
                 <i class="fa-regular fa-circle-xmark"></i></a></td>`;
@@ -66,9 +67,9 @@ async function listaPedido() {
 			<td>${produc.pedido.id}</td>
 			<td>${produc.pedido.fechaSolicitud}</td>
 			<td>$ ${produc.pedido.precioPedido}</td>
-			<td>${produc.pedido.estado.descripcion}</td>
-			<td>${produc.fehcaLlegada} ${produc.horaLlegada}</td>`;
-
+			<td>${produc.pedido.estado.descripcion}</td>`;
+            carritolist2 += produc.pedido.estado.id == 2? `<td>Por asignar</td>`
+                            :`<td>${produc.fehcaLlegada} ${produc.horaLlegada}</td>`;
             if(produc.pedido.estado.id == 2 ||produc.pedido.estado.id == 3 || produc.pedido.estado.id == 4){
                 carritolist2 += `<td><a href="#" onclick="enviarDatoEliminarPedido(${produc.pedido.id})">
                 <i class="fa-regular fa-circle-xmark"></i></a></td>`;
@@ -186,7 +187,8 @@ async function calificarProducto(idProducto, calificacion){
         'Producto calificado con exito',
         'success'
     );
-    location. reload();
+    listaPedido();
+    showElement(2);
 
 }
 

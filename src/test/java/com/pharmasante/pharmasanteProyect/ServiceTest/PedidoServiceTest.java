@@ -38,7 +38,7 @@ public class PedidoServiceTest {
         List<EstadoPedido>estados= Arrays.asList(new EstadoPedido(1,"pre-solicitado"),
                 new EstadoPedido(2,"solicitado"));
         Usuario  usuario = new Usuario(1,"Carlos123","Carlos","Paez","correo",
-                "123","10222", null,"322222",null);
+                "123","10222", null,"322222",null,0);
 
         Pedido pedido = new Pedido(1,500,estados.get(0),null,
                 null,usuario, Arrays.asList(new DetallePedido()));

@@ -1,9 +1,13 @@
 package com.pharmasante.pharmasanteProyect.services.impl;
 
 import com.pharmasante.pharmasanteProyect.Excepciones.ProductException;
+import com.pharmasante.pharmasanteProyect.models.Categoria;
 import com.pharmasante.pharmasanteProyect.models.Producto;
 import com.pharmasante.pharmasanteProyect.EntitiesDto.ProductoDTO;
+import com.pharmasante.pharmasanteProyect.models.Proveedor;
+import com.pharmasante.pharmasanteProyect.repository.ICategoriaRepository;
 import com.pharmasante.pharmasanteProyect.repository.IProductoRepository;
+import com.pharmasante.pharmasanteProyect.repository.IProveedorRepository;
 import com.pharmasante.pharmasanteProyect.services.IStorageService;
 import com.pharmasante.pharmasanteProyect.services.IProductoService;
 import com.pharmasante.pharmasanteProyect.services.IValidaciones;
@@ -23,6 +27,8 @@ public class ProductoServicesimpl implements IProductoService {
     private IProductoRepository iproductoRepository;
     private IValidaciones validaciones;
     private IStorageService storageService;
+    private ICategoriaRepository categoriaRepository;
+    private IProveedorRepository proveedorRepository;
     @Override
     public List<Producto> listaProductos(){
         return iproductoRepository.findAll();
@@ -30,8 +36,21 @@ public class ProductoServicesimpl implements IProductoService {
     @Override
     public Producto guardarProducto(ProductoDTO productoDTO, Errors errors){
        validaciones.validacionDeErrores(errors);
-        String ruta = storageService.store(productoDTO);
+       String ruta;
+        if(productoDTO.getId() !=null && productoDTO.getBytesImg().equals("")){
+            Producto producto2 = iproductoRepository.findById(productoDTO.getId()).get();
+            ruta = producto2.getImagen();
+        }else {
+            ruta = storageService.store(productoDTO);
+        }
         Producto producto = productoDTO.productoDTOtoEntity(ruta);
+        Categoria categoria = categoriaRepository.findById(productoDTO.getCategoria()).get();
+        Proveedor proveedor = proveedorRepository.findById(productoDTO.getProveedor()).get();
+        producto.setCategoria(categoria);
+        producto.setProveedor(proveedor);
+        if (producto.getPrecioCompra()>producto.getPrecioVenta()){
+            throw new ProductException("El precio compra no puede exceder el precio venta","");
+        }
         return iproductoRepository.save(producto);
     }
     @Override

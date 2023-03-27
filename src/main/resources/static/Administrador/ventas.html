@@ -19,7 +19,7 @@
 	<header class="header-panel">
 		<div class="panel-img">
 			<img src="../img/logo.png" alt="">
-			<h4>Bienvenido Cristhian</h4>
+			<h4>Bienvenido Administrador</h4>
 		</div>
 		<div>
 			<li><a href="#"><i class="fa-solid fa-power-off"></i></a></li>
@@ -36,7 +36,7 @@
 				<span class="ocultar">Productos</span></a></li>
 			<li class="foco"><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i>
 				<span class="ocultar">Ventas</span></a></li>	
-			<li><a href="reportes.html"><i class="fa-solid fa-file-lines"></i>
+			<li><a href="reportesIngresos.html"><i class="fa-solid fa-file-lines"></i>
 				<span class="ocultar">Reportes</span></a></li>
 			<li><a href="account.html"><i class="fa-regular fa-circle-user"></i> 
 				<span class="ocultar">Cuentas</span></a></li>
@@ -50,10 +50,9 @@
 	<h2>Ventas</h2>
  
 	<section class="table-container">
-		<div>
-			<div>
-				<input type="text"> <button>Buscar</button>
-			</div>
+		<div class="enlace-lista desactivar-t">
+			<a href="#" class="enlace-pto-agr" onclick="location.reload()"><i class="fa-solid fa-arrow-left"></i> 
+				Volver al listado de ventas</a>
 		</div>
 		<table class="tabla">
 			<thead>
@@ -62,65 +61,34 @@
 					<th>Tipo de venta</th>
                     <th>Fecha</th>
 					<th>Precio</th>
-					<th>Solicitante</th>
-					<th>Acción</th>
+					<th>Ganancia</th>
+					<th>Responsable</th>
+					<th>Ver más</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>005</td>
-					<td>Recoger en tienda</td>
-                    <td>15-05-2022</td>
-					<td>$ 32500</td>
-					<td>Pedro fernandez</td>
-					<td>
-                        <a href="detalleVenta.html"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#"> <i class="fa-solid fa-trash-can"></i></a>
-						<a href="#"><i class="fa-solid fa-pen-to-square open-form"></i></a>
-                    </td>
-				</tr>
-				<tr>
-					<td>001</td>
-					<td>Domicilio</td>
-                    <td>15-02-2023</td>
-					<td>$ 16000</td>
-					<td>Carlos Mora</td>
-					<td>
-                        <a href="#"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#"> <i class="fa-solid fa-trash-can"></i></a>
-						<a href="#"><i class="fa-solid fa-pen-to-square open-form"></i></a>
-                    </td>
-				</tr>
-				<tr>
-					<td>002</td>
-					<td>Recoger en tienda</td>
-                    <td>02-03-2023</td>
-					<td>$ 32500</td>
-					<td>Pedro fernandez</td>
-					<td>
-                        <a href="#"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#"> <i class="fa-solid fa-trash-can"></i></a>
-						<a href="#"><i class="fa-solid fa-pen-to-square open-form"></i></a>
-                    </td>
-				</tr>
-				<tr>
-					<td>003</td>
-					<td>Recoger en tienda</td>
-                    <td>18-02-2023</td>
-					<td>$ 25700</td>
-					<td>María Cordoba</td>
-                    <td>
-                        <a href="#"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#"> <i class="fa-solid fa-trash-can"></i></a>
-						<a href="#"><i class="fa-solid fa-pen-to-square open-form"></i></a>
-                    </td>
-				</tr>
+			<tbody id="tabla-producto">
+				
+				
 				</tbody>
 			</table>
+			<table class="tabla desactivar-t">
+				<thead>
+					<tr>
+						<th>Código producto</th>
+						<th>Descripsión</th>
+						<th>Precio</th>
+						<th>cantidad</th>
+						<th>Subtotal</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-detalle">
+					
+					</tbody>
+				</table>
 	</section>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<!-- <script src="../js/alertas.js"></script> -->
 	<script src="../catalogo/js/panel.js"></script>
+	<script src="js/ventas.js"></script>
 
 	<!-- Scripts enlaces -->
 </body>

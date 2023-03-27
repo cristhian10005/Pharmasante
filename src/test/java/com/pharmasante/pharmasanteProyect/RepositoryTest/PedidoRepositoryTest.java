@@ -30,11 +30,11 @@ public class PedidoRepositoryTest {
     @Test
     void testBuscarPedido(){
         Usuario usuario = new Usuario(1,"Carlos123","Carlos","Paez","correo",
-                "123","10222", null,"322222",null);
+                "123","10222", null,"322222",null,0);
         Usuario usuario2 = new Usuario(2,"Pedro123","Pedro","Mora","correo",
-                "123","25222", null,"355222",null);
+                "123","25222", null,"355222",null,0);
         Usuario usuario3 = new Usuario(3,"Pedro123","Juan","Garcia","correo",
-                "123","25222", null,"355222",null);
+                "123","25222", null,"355222",null,0);
         EstadoPedido estadoPedido = new EstadoPedido(1,"pre-solicitado");
         EstadoPedido estadoPedido2 = new EstadoPedido(2,"solicitado");
         EstadoPedido estadoPedido3 = new EstadoPedido(2,"cancelado");
@@ -69,7 +69,7 @@ public class PedidoRepositoryTest {
     @Test
     void recogerEnTiendaTest(){
         Usuario usuario = new Usuario(1,"Carlos123","Carlos","Paez","correo",
-                "123","10222", null,"322222",null);
+                "123","10222", null,"322222",null,0);
         EstadoPedido estadoPedido = new EstadoPedido(1,"pre-solicitado");
         Pedido pedido = new Pedido(null,500,estadoPedido,null,
                 null,usuario,null);

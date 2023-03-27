@@ -76,8 +76,16 @@ async function validarRegistro(){
 
     if(request.ok){
         let respuesta = await request.json();
+       if(respuesta.idServicio==1){
         encript = btoa(JSON.stringify(respuesta));
         location.href ='catalogo/cliente.html?encript='+encript;
+       }else if(respuesta.idServicio == 2){
+        encript = btoa(JSON.stringify(respuesta));
+        location.href ='vendedor/pedidos.html?encript='+encript;
+       }else if(respuesta.idServicio == 3){
+        encript = btoa(JSON.stringify(respuesta));
+        location.href ='Administrador/productos.html';
+       }
      }else{
         let errorJSon = await request.json();
          Swal.fire({

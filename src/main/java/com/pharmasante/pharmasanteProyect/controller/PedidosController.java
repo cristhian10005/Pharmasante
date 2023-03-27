@@ -26,7 +26,7 @@ public class PedidosController {
     }
     @PostMapping("/carritoadd")
     public void agregarACarrito(@RequestBody UsuarioEntradaDto usuario){
-         pedidosService.pedidoInicial(usuario.getIdServicio(),usuario.getIdCliente());
+         pedidosService.pedidoInicial(usuario.getIdServicio(),usuario.getIdCliente(), 1);
     }
     @PutMapping("/carritound")
     public void carritoUndidades(@RequestBody UsuarioEntradaDto usuario){

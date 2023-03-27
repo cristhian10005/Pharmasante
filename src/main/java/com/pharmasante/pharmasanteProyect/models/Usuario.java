@@ -6,11 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 import java.time.LocalDate;
 
@@ -66,6 +62,8 @@ public class Usuario {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_nacimiento")
+    @NotNull(message = "El campo fecha no debe ir nulo")
+    @Past(message = "La fecha debe ser anterior")
     private LocalDate fechaNacimiento;
 
     @Column(name = "numero_contacto")
@@ -75,8 +73,11 @@ public class Usuario {
     @Pattern(regexp = "^^[0-9]+$", message = "El número de contacto solo puede contener números")
     private String nContacto;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "id_rol")
     private Rol rol;
+
+    @Column(name = "estado")
+    private int estado;
 }
 

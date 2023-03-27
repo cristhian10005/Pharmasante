@@ -1,7 +1,7 @@
 .table-p{
     position: relative;
 }
-#form-product{
+.form-product{
     background: rgba(0, 0, 0, .4 );
     position: absolute;
     padding: 10px;
@@ -10,18 +10,17 @@
     right: 5%;
     top: 15%;
     bottom: 5%;
-    display: none;
 }
 
-#form-product:target{
-    display: flex;
+.ocultar{
+    display: none !important;
 }
 
-#form-product a {
+.form-product a {
     color: #B41F1F;
     font-weight: bold;
 }
-#form-product form{
+.form-product form{
     width: 50%;
     border-radius: 30px;
 	background: #ffffff;
@@ -33,11 +32,11 @@
     gap: 20px;
     padding: 15px;
 }
-#form-product form label{
+.form-product form label{
     color: #B41F1F;
     font-weight: bold;
 }
-#form-product form input, #form-product form select{
+.form-product form input, .form-product form select{
     width: 80%;
     color: #205192;
     outline: none;
@@ -45,7 +44,7 @@
     border: 1px solid #8dadd7;
     height: 30px;
 }
-#form-product input[type="file"] {
+.form-product input[type="file"] {
     display: none;
   }
   .custom-file-upload {
@@ -61,10 +60,10 @@
   }
 
 
-#form-product form input::placeholder{
+.form-product form input::placeholder{
     color: #205192;
 }
-#form-product form button{
+.form-product form button{
     background: #B41F1F;
     color: #fff;
     border: none;

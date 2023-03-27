@@ -52,8 +52,8 @@ public class TestStoreImg {
 
     @BeforeEach
     void inicializarValores(){
-        productoDTO = new ProductoDTO("Loratadina", new Categoria(1, "Cosmeticos"),
-                new Proveedor(1, "La sante", "555", "correo1"),
+        productoDTO = new ProductoDTO(null,"Loratadina", 1,
+               1,
                 "imagen.png", 500, 700, bytes);
     }
 

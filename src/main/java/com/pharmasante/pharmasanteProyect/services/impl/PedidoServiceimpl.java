@@ -47,10 +47,12 @@ public class PedidoServiceimpl implements IPedidosService {
     ICalificacionRepository calificacionRepository;
     @Autowired
     IProductoRepository productoRepository;
+    @Autowired
+    IClienteRepository clienteRepository;
 
 
     @Override
-    public void pedidoInicial(int idProducto, int idUsuario) {
+    public void pedidoInicial(int idProducto, int idUsuario, int idEstado) {
         LocalDate fecha = LocalDate.now();
         if (pedidoCarrito(idUsuario)!=null){
             List<DetallePedido> detalle = pedidoCarrito(idUsuario).getDetalle();
@@ -61,7 +63,7 @@ public class PedidoServiceimpl implements IPedidosService {
                 }
             }
         }
-        detallePedidoRepository.carritoCompras(idProducto, idUsuario,fecha,1);
+        detallePedidoRepository.carritoCompras(idProducto, idUsuario,fecha,idEstado);
     }
 
     @Override
@@ -160,6 +162,7 @@ public class PedidoServiceimpl implements IPedidosService {
         pedido.setEstado(estadoPedidoRepository.findById(2).get());
         pedido.setTipoPedido(tipoPedidoRepository.findById(2).get());
         pedido.setFechaSolicitud(LocalDate.now());
+        pedido.setPrecioPedido(pedido.getPrecioPedido()+ 6000);
         Domicilio domicilio = new Domicilio(null, domicilioP.getDestinatario(),
                 domicilioP.getContacto(), domicilioP.getDireccion(), LocalDate.now(),
                 LocalTime.of(0, 0, 0), pedido);
@@ -200,16 +203,16 @@ public class PedidoServiceimpl implements IPedidosService {
         }else if (pedido.getEstado().getId() == 3 || pedido.getEstado().getId() == 4){
             pedido.setEstado(estadoPedidoRepository.findById(6).get());
             pedidoRepository.save(pedido);
+            Cliente cliente = clienteRepository.findByUsuario(pedido.getUsuario()).get(0);
+            cliente.setReportes(cliente.getReportes()+1);
+            clienteRepository.save(cliente);
+
         }
     }
 
     public Set<Producto> listaCalificados(Usuario usuario){
         EstadoPedido estado = estadoPedidoRepository.findById(7).get();
         List<Pedido>pedidos =pedidoRepository.findByUsuarioAndEstado(usuario, estado);
-        if (pedidos.isEmpty()){
-            throw new ProductException("EL usuario no dispone de pedidos comprados",
-                    "pedidos no encontrados");
-        }
         HashSet<Producto>productos = new HashSet<>();
         for (Pedido pedido: pedidos){
            for (DetallePedido detalle: pedido.getDetalle()){

@@ -32,10 +32,7 @@
 			<li><a href="#" onclick="repeler()"><i class="fa-solid fa-arrow-right">
 				</i> <span class="ocultar">Ocultar</span></a></li>
 
-			<li class="foco"><a href="#" class="btn-cargar"><i class="fa-solid fa-pills"></i> 
-				<span class="ocultar">Productos</span></a></li>
-
-			<li><a href="#" class="btn-cargar"><i class="fa-solid fa-cash-register"></i> 
+			<li class="foco"><a href="#" class="btn-cargar"><i class="fa-solid fa-cash-register"></i> 
 				<span class="ocultar">Caja</span></a></li>
 
 			<li><a href="#" class="btn-cargar"><i class="fa-solid  fa-list-ol"></i> 
@@ -53,80 +50,71 @@
 	<h2>Poductos para registrar en caja</h2>
 
 	<section class="table-container">
-		<div>
-			<a href="caja.html" class="enlace-pto-agr">Consultar productos agregados
-				<i class="fa-solid fa-eye"></i>
-			</a>
-			<div>
-				<input type="text"> <button>Buscar</button>
-			</div>
-		</div>
-		<table class="tabla">
-			<thead>
-				<tr>
-					<th>Id producto</th>
-					<th>Descripsión</th>
-					<th>Existencias</th>
-					<th>Precio</th>
-					<th>Agregar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>0001</td>
-					<td>Mucosina Gotas 30ML</td>
-					<td>38</td>
-					<td>$ 17500</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0002</td>
-					<td>Dolex forte 500mg</td>
-					<td>60</td>
-					<td>$ 2500</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0003</td>
-					<td>Amoxicilina 500mg Tab</td>
-					<td>20</td>
-					<td>$ 4200</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0004</td>
-					<td>Noxpirin junior polvo</td>
-					<td>34</td>
-					<td>$ 3500</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0005</td>
-					<td>Jabón Protex Pro-Hidrata olive 90 Gramos</td>
-					<td>28</td>
-					<td>$ 4700</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0006</td>
-					<td>Alcohol Anticeptico MK 700 Ml</td>
-					<td>15</td>
-					<td>$ 2500</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				<tr>
-					<td>0007</td>
-					<td>Bloqueador Tanga FPS 150ML crema</td>
-					<td>26</td>
-					<td>$ 7200</td>
-					<td class="td5"><a href="#"><i class="fa-solid fa-circle-plus"></i></a></td>
-				</tr>
-				</tbody>
-			</table>
+
+		
 	</section>
+
+
+	<div class="contenedor-tablas">
+		<section class="table-container">
+
+			<div class="enlace-lista">
+				<a href="#" class="enlace-pto-agr" id="detalle-caja">
+					<i class="fa-solid fa-eye"></i> Consultar productos agregados
+				</a>
+				<div>
+					<input type="text" id="tex-busqueda"> <button onclick="buscar()">Buscar</button>
+				</div>
+			</div>
+			
+			<div class="enlace-lista desactivar-t">
+				<a href="#" class="enlace-pto-agr" onclick="location.reload()"><i class="fa-solid fa-arrow-left"></i> 
+					Volver a listado de productos</a>
+			</div>
+
+
+			<table class="tabla">
+				<thead>
+					<tr>
+						<th>Id producto</th>
+						<th>Descripsión</th>
+						<th>Proveedor</th>
+						<th>Precio</th>
+						<th>Agregar</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-pedidos">
+					
+					</tbody>
+			</table>
+
+			<table class="tabla desactivar-t">
+				<thead>
+					<tr>
+						<th>Código producto</th>
+						<th>Descripsión</th>
+						<th>cantidad</th>
+						<th>Precio</th>
+						<th>Subtotal</th>
+						<th>Eliminar</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-detalle">
+					
+					</tbody>
+					<tfoot id="tabla-foot">
+					
+						
+					  </tfoot>
+				</table>
+		</section>
+	</div>
+	
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../catalogo/js/panel.js"></script>
+	<script src="js/productos.js"></script>
+	<script src="js/enlacePanel.js"></script>
 
 	<!-- Scripts enlaces -->
 </body>

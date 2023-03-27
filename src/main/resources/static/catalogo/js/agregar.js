@@ -45,8 +45,6 @@ function buscar(dato){
         dato.busqueda = palabra.value;
         let encript = btoa(JSON.stringify(dato));
         location.href='busqueda.html?encript='+encript;
-    }else{
-        alert("Dato incorrecto");
     }
 
 }
@@ -76,7 +74,7 @@ async function unidades(id, tipo){
     });
 
    if(request.ok){
-    location. reload();
+    listaCarrito(); 
    }else{
     let errorJSon = await request.json();
         Swal.fire({
@@ -85,40 +83,40 @@ async function unidades(id, tipo){
         });
    }
 }
-async function eliminarUnd(id){
-    dataBtn.idServicio = id;
-    let condfirmado = false;
-    await Swal.fire({
-        title: '¿Seguro?',
-        text: "Desea eliminar el producto",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Eliminar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-            condfirmado = true;
-               fetch('../pedidos/carritodel', {
-                method: 'DELETE',
-                body: JSON.stringify(dataBtn),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            });
-        }
-      })
+    async function eliminarUnd(id){
+        dataBtn.idServicio = id;
+        let condfirmado = false;
+        await Swal.fire({
+            title: '¿Seguro?',
+            text: "Desea eliminar el producto",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                condfirmado = true;
+                fetch('../pedidos/carritodel', {
+                    method: 'DELETE',
+                    body: JSON.stringify(dataBtn),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
+        })
 
-      if(condfirmado){
-        await Swal.fire(
-                'Eliminado',
-                'Producto eliminado con exito',
-                'success'
-            );
-            location. reload();
-      }
-}
+        if(condfirmado){
+            await Swal.fire(
+                    'Eliminado',
+                    'Producto eliminado con exito',
+                    'success'
+                );
+                location.reload();
+        }
+    }
 
 
 
@@ -127,7 +125,8 @@ async function enviarDatoEliminarPedido(idPedido){
     let condfirmado = false;
     await Swal.fire({
         title: '¿Seguro?',
-        text: "Desea eliminar el pedido",
+        text: "Desea eliminar el pedido, Si el pedido ya ha sido enviado o alistado, esta acción generará un reporte negativo."+
+        "La acumalción de reportes, puede generar bloqueo de cuenta",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

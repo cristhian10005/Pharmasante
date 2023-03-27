@@ -1,9 +1,6 @@
 package com.pharmasante.pharmasanteProyect.EntitiesDto;
 
-
-import com.pharmasante.pharmasanteProyect.models.Categoria;
 import com.pharmasante.pharmasanteProyect.models.Producto;
-import com.pharmasante.pharmasanteProyect.models.Proveedor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,15 +10,16 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 public class ProductoDTO {
 
+  private Integer id;
   @NotNull(message = "El campo nombre no debe ir nulo")
   @NotBlank(message = "El campo nombre no puede ir en blanco")
   @Size(min = 3, max = 30, message = "El nombre debe contener entre 3 y 20 letras")
   private String nombre;
   @NotNull(message = "Debe asignarse una categoria")
-  private Categoria categoria;
+  private int categoria;
 
   @NotNull(message = "Debe asignarse un proveedor")
-  private Proveedor proveedor;
+  private int proveedor;
   @NotNull(message = "Debe asignarse una imagen")
   private String nombreImg;
 
@@ -37,7 +35,8 @@ public class ProductoDTO {
   private String bytesImg;
 
   public Producto productoDTOtoEntity(String rutaImg){
-     return new Producto(null, this.nombre, this.categoria,this.proveedor, rutaImg,
+
+     return new Producto(this.id, this.nombre, null,null, rutaImg,
              this.precioCompra, this.precioVenta,0,0,0);
   }
 

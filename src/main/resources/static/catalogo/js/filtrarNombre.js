@@ -24,13 +24,14 @@ async function filtroNombre() {
         const catalogoJson = await request.json();
         setData(dato);
         let contador= 0;
-        let filtro = '<section class="main-catalog">';
-        for (let produc of catalogoJson.listaProducto) {
+        if(catalogoJson.listaProducto!= undefined && catalogoJson !=null){
+            let filtro = '<section class="main-catalog">';
+            for (let produc of catalogoJson.listaProducto) {
 
-            if(contador>4 && contador%5 ===0){
+             if(contador>4 && contador%5 ===0){
                 filtro +='</section><section class="main-catalog">'
-            }
-            filtro += `	<div class="main-catalog-section1">
+                }
+             filtro += `	<div class="main-catalog-section1">
                             <div><img src="../${produc.imagen}" alt=""></div>
                             <ul class="main-catalog-section1-item">
                                 <li><p>${produc.nombre}</p></li>
@@ -52,6 +53,7 @@ async function filtroNombre() {
         }
         filtro +='</section>';
         catalogo.innerHTML = filtro;
+      }
     }
     iniciarBotones(dato);
     accionProducto(dato);

@@ -49,7 +49,7 @@ public class CarritoServiceTest {
         producto = new Producto(1,"Verapamilo",null,null,
                 "",500,800,0,0,0);
         usuario = new Usuario(1,"Carlos123","Carlos","Paez","correo",
-                "123","10222", null,"322222",null);
+                "123","10222", null,"322222",null,0);
         estadoPedido = new EstadoPedido(1,"pre-solicitado");
 
         pedido = new Pedido(1,500,estadoPedido,null,
@@ -98,10 +98,9 @@ public class CarritoServiceTest {
         BDDMockito.willDoNothing().given(detallePedidoRepository)
                 .carritoCompras(1,1, LocalDate.now(),1);
 
-        pedidoServiceimpl.pedidoInicial(1,1);
+        pedidoServiceimpl.pedidoInicial(1,1,1);
         verify(detallePedidoRepository, times(1))
                 .carritoCompras(1,1, LocalDate.now(),1);
     }
-
 
 }
